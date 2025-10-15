@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ezekiel Correa — Resume</title>
+<meta name="description" content="Multi-section, dark-themed resume for Ezekiel Correa — IT Support, IT Asset Management, Systems Troubleshooting, AI Projects.">
+<style>
+  :root{
+    --bg:#0b1220;           /* deep navy */
+    --panel:#0f172a;        /* slate-900 */
+    --ink:#e5e7eb;          /* slate-200 */
+    --muted:#94a3b8;        /* slate-400 */
+    --accent:#60a5fa;       /* blue-400 */
+    --accent-2:#2563eb;     /* blue-600 */
+    --rule:#1f2a44;         /* divider */
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* Top navigation (no title text) */
+  .topbar{
+    position:sticky;top:0;z-index:1000;
+    background:linear-gradient(to right, rgba(15,23,42,.92), rgba(2,6,23,.85));
+    border-bottom:1px solid rgba(148,163,184,.15);
+    backdrop-filter:saturate(180%) blur(8px);
+  }
+  .topbar-inner{
+    max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;
+    padding:10px 16px;color:#fff;
+  }
+  .mini-nav{display:flex;gap:14px;font-weight:600}
+  .mini-nav a{opacity:.9}
+  .mini-nav a:hover{opacity:1}
+
+  /* Fullscreen sections */
+  section.page{
+    position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    padding:24px;
+    border-bottom:1px solid rgba(148,163,184,.15);
+    overflow:hidden;
+  }
+  .bg{
+    position:absolute;inset:0;z-index:0;
+    background-position:center;background-size:cover;background-repeat:no-repeat;
+    filter:grayscale(.15) contrast(1.1) brightness(.7);
+    transform:scale(1.02);
+  }
+  .overlay{
+    position:absolute;inset:0;z-index:1;
+    background:radial-gradient(60% 60% at 50% 40%, rgba(59,130,246,.28), transparent 60%), linear-gradient(to bottom, rgba(2,6,23,.2), rgba(2,6,23,.8));
+  }
+  .panel{
+    position:relative;z-index:2;
+    width:min(920px, 92vw);
+    background:var(--panel);
+    border:1px solid var(--rule);
+    border-radius:16px;
+    padding:24px 22px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+  }
+  h1,h2,h3{margin:0 0 8px}
+  h1{font-size:2.3rem}
+  h2{font-size:1.15rem;text-transform:uppercase;letter-spacing:.14rem;color:#cbd5e1}
+  .muted{color:var(--muted)}
+  ul{margin:10px 0 0 18px}
+  li{margin:7px 0}
+
+  /* Buttons */
+  .nav-buttons{
+    position:absolute;bottom:18px;left:0;right:0;z-index:3;
+    display:flex;justify-content:space-between;gap:12px;
+    padding:0 22px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 14px;border-radius:10px;font-weight:700;
+    color:#fff;background:var(--accent-2);border:1px solid rgba(255,255,255,.08);
+    text-decoration:none;cursor:pointer;
+  }
+  .btn.secondary{background:transparent;border-color:rgba(148,163,184,.4);color:var(--ink)}
+  .btn:hover{filter:saturate(110%) brightness(1.05)}
+  .btn[disabled]{opacity:.35;pointer-events:none}
+
+  /* Contact row on first page only */
+  .contact{margin-top:8px;color:#e5e7eb;opacity:.9}
+  .cta{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:10px;background:var(--accent-2);color:#fff;font-weight:800}
+
+  /* Simple fade transition */
+  .fade{animation:fade .6s ease both}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  /* Chips for Tools page */
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .chip{font-size:.95rem;background:rgba(37,99,235,.14);border:1px solid rgba(96,165,250,.35);color:#c7d2fe;padding:8px 12px;border-radius:999px}
+
+  /* Responsive */
+  @media (max-width:560px){
+    h1{font-size:1.8rem}
+    .panel{padding:18px 16px}
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <nav class="mini-nav">
+        <a href="#summary">Summary</a>
+        <a href="#experience">Experience</a>
+        <a href="#ai-projects">AI</a>
+        <a href="#tools">Software & Tools</a>
+        <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Page 1: Summary -->
+  <section id="summary" class="page">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1920&auto=format&fit=crop');"></div>
+    <div class="overlay"></div>
+    <div class="panel fade">
+      <h1>Ezekiel Correa</h1>
+      <p class="muted">IT Support • IT Asset Management • Systems Troubleshooting • AI Projects</p>
+      <p class="contact">Rockdale, TX • (254) 317‑9258 • <a href="mailto:saints.correa23@gmail.com">saints.correa23@gmail.com</a></p>
+      <a class="cta" href="#" onclick="window.print()">Download as PDF</a>
+      <hr style="border:none;border-top:1px solid var(--rule);margin:14px 0">
+      <h2>Professional Summary</h2>
+      <p>Motivated IT professional with 4+ years of hands-on experience in <strong>IT asset management</strong>, <strong>end-user support</strong>, and <strong>system troubleshooting</strong>. Skilled in managing full asset lifecycles, deploying and maintaining hardware, and improving workflows using AI and automation. CompTIA <strong>A+</strong> certified and pursuing <strong>Network+</strong>. Bilingual in English and Spanish with a strong customer-first approach.</p>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn secondary" disabled>◀ Back</button>
+      <button class="btn" data-next="#experience">Next ▶</button>
+    </div>
+  </section>
+
+  <!-- Page 2: Experience -->
+  <section id="experience" class="page">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=1920&auto=format&fit=crop');"></div>
+    <div class="overlay"></div>
+    <div class="panel fade">
+      <h2>Experience</h2>
+      <div>
+        <h3>Senior IT Asset Manager — EOS IT Solutions</h3>
+        <p class="muted">Pflugerville, TX • Jun 2025 – Present</p>
+        <ul>
+          <li>Oversee full lifecycle of IT assets ensuring compliance and optimization.</li>
+          <li>Configure Jira for automated asset tracking and reporting.</li>
+          <li>Lead audits, mentor technicians, and coordinate with vendors.</li>
+        </ul>
+        <hr style="border:none;border-top:1px solid var(--rule)">
+        <h3>Tech Support — A3 Staffing Solutions</h3>
+        <p class="muted">Temple, TX • Apr 2025 – Present</p>
+        <ul>
+          <li>Perform hospital hardware/software refresh under HIPAA compliance.</li>
+          <li>Install Windows and applications, assist users, and log all deployments.</li>
+        </ul>
+        <hr style="border:none;border-top:1px solid var(--rule)">
+        <h3>Server Test Technician — Kelly</h3>
+        <p class="muted">Georgetown, TX • Nov 2024 – Apr 2025</p>
+        <ul>
+          <li>Diagnosed Linux-based servers and switches using Python tools.</li>
+          <li>Documented debugging steps and resolutions for continuous improvement.</li>
+        </ul>
+        <hr style="border:none;border-top:1px solid var(--rule)">
+        <h3>Tech Support Agent — Alorica</h3>
+        <p class="muted">Temple, TX • Dec 2021 – Nov 2022</p>
+        <ul>
+          <li>Resolved customer technical issues via remote support and ticketing systems.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn secondary" data-prev="#summary">◀ Back</button>
+      <button class="btn" data-next="#ai-projects">Next ▶</button>
+    </div>
+  </section>
+
+  <!-- Page 3: AI Projects -->
+  <section id="ai-projects" class="page">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1920&auto=format&fit=crop');"></div>
+    <div class="overlay"></div>
+    <div class="panel fade">
+      <h2>AI Projects</h2>
+      <ul>
+        <li>Developed <strong>LLM-powered Helpdesk Agents</strong> to automate troubleshooting and configuration for both network and client devices.</li>
+        <li>Integrated AI APIs with Python-based automation scripts to enable real-time diagnostics and intelligent problem resolution.</li>
+        <li>Built conversational AI systems capable of natural language interaction for IT support workflows and system management.</li>
+      </ul>
+      <p><strong>Technical Tools Used:</strong> Python, Grok, OpenAI API, Streamlit, FastAPI, JSON, RESTful APIs</p>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn secondary" data-prev="#experience">◀ Back</button>
+      <button class="btn" data-next="#tools">Next ▶</button>
+    </div>
+  </section>
+
+  <!-- Page 4: Software & Tools -->
+  <section id="tools" class="page">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1920&auto=format&fit=crop');"></div>
+    <div class="overlay"></div>
+    <div class="panel fade">
+      <h2>Software & Tools</h2>
+      <p class="muted">Platforms and technologies I've worked with:</p>
+      <div class="chips">
+        <span class="chip">Jira</span>
+        <span class="chip">ServiceNow</span>
+        <span class="chip">ChatGPT</span>
+        <span class="chip">Grok</span>
+        <span class="chip">MobaXterm</span>
+        <span class="chip">Cisco CLI</span>
+        <span class="chip">Windows PowerShell</span>
+        <span class="chip">Python</span>
+        <span class="chip">GitHub</span>
+        <span class="chip">Google Workspace</span>
+        <span class="chip">Microsoft 365</span>
+        <span class="chip">Mac Devices</span>
+        <span class="chip">AppleScripts</span>
+        <span class="chip">Linux</span>
+      </div>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn secondary" data-prev="#ai-projects">◀ Back</button>
+      <button class="btn" data-next="#education">Next ▶</button>
+    </div>
+  </section>
+
+  <!-- Page 5: Education -->
+  <section id="education" class="page">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1517520287167-4bbf64a00d66?q=80&w=1920&auto=format&fit=crop');"></div>
+    <div class="overlay"></div>
+    <div class="panel fade">
+      <h2>Education</h2>
+      <p><strong>Texas State Technical College</strong> — AAS, Computer Maintenance Technology (2019)</p>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn secondary" data-prev="#tools">◀ Back</button>
+      <button class="btn" data-next="#certifications">Next ▶</button>
+    </div>
+  </section>
+
+  <!-- Page 6: Certifications -->
+  <section id="certifications" class="page">
+    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1920&auto=format&fit=crop');"></div>
+    <div class="overlay"></div>
+    <div class="panel fade">
+      <h2>Certifications</h2>
+      <ul>
+        <li>CompTIA A+ (Active)</li>
+        <li>CompTIA Network+ (In Progress)</li>
+      </ul>
+      <p class="muted" style="margin-top:10px">© 2025 Ezekiel Correa • Background images via Unsplash (free to use)</p>
+    </div>
+    <div class="nav-buttons">
+      <button class="btn secondary" data-prev="#education">◀ Back</button>
+      <button class="btn" data-next="#summary">Back to Start ⤴</button>
+    </div>
+  </section>
+
+  <script>
+    // Button navigation
+    function goTo(id){
+      const el = document.querySelector(id);
+      if(!el) return;
+      el.scrollIntoView({behavior:'smooth', block:'start'});
+      history.replaceState(null, '', id);
+    }
+    document.addEventListener('click', (e) => {
+      const next = e.target.getAttribute('data-next');
+      const prev = e.target.getAttribute('data-prev');
+      if(next){ e.preventDefault(); goTo(next); }
+      if(prev){ e.preventDefault(); goTo(prev); }
+    });
+    // On load, if hash exists, scroll there
+    window.addEventListener('load', () => {
+      if(location.hash){
+        setTimeout(()=>goTo(location.hash), 100);
+      }
+    });
+  </script>
+</body>
+</html>
