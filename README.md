@@ -4,8 +4,7 @@ This repository hosts my professional resume as a responsive, dark-themed, multi
 It is built to showcase my IT and AI experience with interactive navigation and rich visuals.
 
 🌐 **Live site:**  
-[https://ELSpaniard97.github.io/ezekiel-correa-resume/](https://YOURUSERNAME.github.io/ezekiel-correa-resume/)
-
+(https://elspaniard97.github.io/ezekiel-correa-resume/)
 ---
 
 ## 🧠 Features
