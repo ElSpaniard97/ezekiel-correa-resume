@@ -4,193 +4,303 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ezekiel Correa — Resume</title>
-<meta name="description" content="Multi-section, dark-themed resume for Ezekiel Correa — IT Support, IT Asset Management, Systems Troubleshooting, AI Projects.">
+<meta name="description" content="Modern portfolio-style resume for Ezekiel Correa — IT Support, AI Projects, Systems Troubleshooting.">
 <style>
-  :root{
-    --bg:#0b1220;           /* deep navy */
-    --panel:#0f172a;        /* slate-900 */
-    --ink:#e5e7eb;          /* slate-200 */
-    --muted:#94a3b8;        /* slate-400 */
-    --accent:#60a5fa;       /* blue-400 */
-    --accent-2:#2563eb;     /* blue-600 */
-    --rule:#1f2a44;         /* divider */
+  /* Root Theme */
+  :root {
+    --bg:#0b1220;
+    --panel:#0f172a;
+    --ink:#e5e7eb;
+    --muted:#94a3b8;
+    --accent:#00bfff;
+    --accent-2:#1e90ff;
+    --rule:#1f2a44;
   }
+  body.light {
+    --bg:#f9fafb;
+    --panel:#ffffff;
+    --ink:#1e293b;
+    --muted:#64748b;
+    --accent:#2563eb;
+    --accent-2:#1d4ed8;
+    --rule:#cbd5e1;
+  }
+
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
-  a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline}
+  html,body {
+    margin:0; padding:0;
+    background:var(--bg); color:var(--ink);
+    font:16px/1.6 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition:background .5s, color .5s;
+  }
 
-  /* Top navigation */
-  .topbar{
-    position:sticky;top:0;z-index:1000;
-    background:linear-gradient(to right, rgba(15,23,42,.92), rgba(2,6,23,.85));
-    border-bottom:1px solid rgba(148,163,184,.15);
-    backdrop-filter:saturate(180%) blur(8px);
-  }
-  .topbar-inner{
-    max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;
-    padding:10px 16px;color:#fff;
-  }
-  .mini-nav{display:flex;gap:14px;font-weight:600}
-  .mini-nav a{opacity:.9}
-  .mini-nav a:hover{opacity:1}
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
 
-  /* Fullscreen sections */
-  section.page{
-    position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;
-    padding:24px;
-    border-bottom:1px solid rgba(148,163,184,.15);
-    overflow:hidden;
-  }
-  .bg{
-    position:absolute;inset:0;z-index:0;
-    background-position:center;background-size:cover;background-repeat:no-repeat;
-    filter:grayscale(.15) contrast(1.1) brightness(.7);
-    transform:scale(1.02);
-  }
-  .overlay{
-    position:absolute;inset:0;z-index:1;
-    background:radial-gradient(60% 60% at 50% 40%, rgba(59,130,246,.28), transparent 60%), linear-gradient(to bottom, rgba(2,6,23,.2), rgba(2,6,23,.8));
-  }
-  .panel{
-    position:relative;z-index:2;
-    width:min(920px, 92vw);
+  /* Top Navigation */
+  .topbar {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:12px 24px;
     background:var(--panel);
-    border:1px solid var(--rule);
-    border-radius:16px;
-    padding:24px 22px;
+    border-bottom:1px solid var(--rule);
+    position:sticky; top:0; z-index:1000;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  }
+  .logo {
+    font-weight:700; font-size:1.3rem;
+  }
+  .nav-links {
+    display:flex; align-items:center; gap:20px;
+  }
+  .nav-links a {
+    color:var(--ink);
+    font-weight:600;
+    transition:color .3s;
+  }
+  .nav-links a:hover, .nav-links a.active { color:var(--accent); }
+
+  .mode-btn {
+    background:var(--accent-2); border:none;
+    color:#fff; width:40px; height:40px;
+    border-radius:50%; font-size:1.1rem;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; box-shadow:0 3px 10px rgba(0,0,0,.3);
+  }
+
+  /* Tab Layout */
+  .tabs {
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    min-height:100vh;
+    padding:40px 16px;
+  }
+
+  .tab-content {
+    display:none;
+    max-width:950px; width:92vw;
+    background:var(--panel);
+    border-radius:20px;
+    padding:50px;
     box-shadow:0 10px 30px rgba(0,0,0,.25);
+    animation:fade .5s ease;
   }
-  h1,h2,h3{margin:0 0 8px}
-  h1{font-size:2.3rem}
-  h2{font-size:1.15rem;text-transform:uppercase;letter-spacing:.14rem;color:#cbd5e1}
-  .muted{color:var(--muted)}
+  .tab-content.active { display:block; }
+
+  /* Hero Section (Summary Tab) */
+  .hero {
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+    gap:40px;
+  }
+  .hero-text {
+    flex:1 1 350px;
+  }
+  .hero h1 {
+    font-size:2.5rem; margin:0 0 10px; color:#fff;
+  }
+  .hero h2 {
+    font-size:1.3rem; font-weight:600; color:var(--accent);
+  }
+  .hero p { color:var(--muted); max-width:480px; }
+  .buttons {
+    margin-top:20px; display:flex; gap:14px; align-items:center;
+  }
+  .btn {
+    background:var(--accent-2);
+    color:#fff;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:700;
+    cursor:pointer;
+    transition:all .3s;
+  }
+  .btn:hover { background:var(--accent); transform:translateY(-2px); }
+
+  /* Social Icons */
+  .socials {
+    display:flex; gap:12px; margin-top:25px;
+  }
+  .socials a {
+    width:40px; height:40px;
+    border-radius:50%;
+    background:rgba(0,191,255,0.15);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--accent);
+    font-size:1.2rem;
+    transition:all .3s;
+  }
+  .socials a:hover {
+    background:var(--accent); color:#fff;
+    transform:scale(1.1);
+  }
+
+  /* Hexagon Photo Mask */
+  .photo-frame {
+    width:260px; height:300px;
+    clip-path:polygon(25% 6%,75% 6%,100% 50%,75% 94%,25% 94%,0% 50%);
+    background:var(--accent);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 25px var(--accent);
+  }
+  .photo-frame img {
+    width:240px; height:280px;
+    border-radius:10px;
+    object-fit:cover;
+    clip-path:inherit;
+  }
+
+  /* Common Elements */
+  h2 { text-transform:uppercase; letter-spacing:.1rem; margin-top:0; }
   ul{margin:10px 0 0 18px}
-  li{margin:7px 0}
+  li{margin:7px 0;color:var(--ink)}
+  .muted{color:var(--muted)}
+  hr{border:none;border-top:1px solid var(--rule);margin:20px 0}
+  @keyframes fade { from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;} }
 
-  /* Buttons */
-  .nav-buttons{
-    position:absolute;bottom:18px;left:0;right:0;z-index:3;
-    display:flex;justify-content:space-between;gap:12px;
-    padding:0 22px;
-  }
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:10px 14px;border-radius:10px;font-weight:700;
-    color:#fff;background:var(--accent-2);border:1px solid rgba(255,255,255,.08);
-    text-decoration:none;cursor:pointer;
-  }
-  .btn.secondary{background:transparent;border-color:rgba(148,163,184,.4);color:var(--ink)}
-  .btn:hover{filter:saturate(110%) brightness(1.05)}
-  .btn[disabled]{opacity:.35;pointer-events:none}
-
-  /* Contact row */
-  .contact{margin-top:8px;color:#e5e7eb;opacity:.9}
-  .cta{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:10px;background:var(--accent-2);color:#fff;font-weight:800}
-
-  /* Intro with photo */
-  .intro {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  .headshot {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--accent);
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
-    transition: transform 0.4s ease, opacity 0.4s ease;
-  }
-  .headshot:hover {
-    transform: scale(1.05);
-    opacity: 0.95;
-  }
-
-  /* Simple fade transition */
-  .fade{animation:fade .6s ease both}
-  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-
-  /* Chips for Tools page */
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-  .chip{font-size:.95rem;background:rgba(37,99,235,.14);border:1px solid rgba(96,165,250,.35);color:#c7d2fe;padding:8px 12px;border-radius:999px}
-
-  /* Responsive */
-  @media (max-width:560px){
-    h1{font-size:1.8rem}
-    .panel{padding:18px 16px}
-    .headshot {
-      width: 80px;
-      height: 80px;
-    }
-    .intro {
-      justify-content: center;
-      text-align: center;
-    }
+  @media(max-width:768px){
+    .hero{flex-direction:column;text-align:center}
+    .photo-frame{width:220px;height:260px;}
+    .photo-frame img{width:200px;height:240px;}
   }
 </style>
+<script src="https://kit.fontawesome.com/a2e0e6e6b0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="topbar">
-    <div class="topbar-inner">
-      <nav class="mini-nav">
-        <a href="#summary">Summary</a>
-        <a href="#experience">Experience</a>
-        <a href="#ai-projects">AI</a>
-        <a href="#tools">Software & Tools</a>
-        <a href="#education">Education</a>
-        <a href="#certifications">Certifications</a>
-      </nav>
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <div class="logo">Ezekiel Correa</div>
+    <div class="nav-links">
+      <a href="#" data-tab="summary" class="active">Home</a>
+      <a href="#" data-tab="experience">Experience</a>
+      <a href="#" data-tab="ai">AI</a>
+      <a href="#" data-tab="tools">Tools</a>
+      <a href="#" data-tab="education">Education</a>
+      <a href="#" data-tab="certs">Certs</a>
+      <button class="mode-btn" id="modeToggle">🌙</button>
     </div>
-  </div>
+  </header>
 
-  <!-- Page 1: Summary -->
-  <section id="summary" class="page">
-    <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1920&auto=format&fit=crop');"></div>
-    <div class="overlay"></div>
-    <div class="panel fade">
-      <div class="intro">
-        <img class="headshot" src="https://raw.githubusercontent.com/ElSpaniard97/ezekiel-correa-resume/main/2986ED64-9F11-46B7-ACAF-379171DE8CB3.jpeg" alt="Ezekiel Correa photo">
-        <div>
-          <h1>Ezekiel Correa</h1>
-          <p class="muted">IT Support • IT Asset Management • Systems Troubleshooting • AI Projects</p>
+  <main class="tabs">
+
+    <!-- Summary / Hero -->
+    <div class="tab-content active" id="summary">
+      <div class="hero">
+        <div class="hero-text">
+          <h1>Hello, I'm<br><strong>Ezekiel Correa</strong></h1>
+          <h2>IT Support & AI Automation Specialist</h2>
+          <p>Experienced IT professional specializing in asset management, automation, and system troubleshooting. Passionate about streamlining workflows and integrating AI into modern IT support systems.</p>
+          <div class="buttons">
+            <a href="#" class="btn" onclick="window.print()">Download CV</a>
+          </div>
+          <div class="socials">
+            <a href="https://github.com/ElSpaniard97" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ezekiel-correa-117a50305" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="photo-frame">
+          <img src="https://raw.githubusercontent.com/ElSpaniard97/ezekiel-correa-resume/main/2986ED64-9F11-46B7-ACAF-379171DE8CB3.jpeg" alt="Ezekiel Correa">
         </div>
       </div>
-      <p class="contact">Rockdale, TX • (254) 317-9258 • <a href="mailto:saints.correa23@gmail.com">saints.correa23@gmail.com</a></p>
-      <a class="cta" href="#" onclick="window.print()">Download as PDF</a>
-      <hr style="border:none;border-top:1px solid var(--rule);margin:14px 0">
-      <h2>Professional Summary</h2>
-      <p>Motivated IT professional with 4+ years of hands-on experience in <strong>IT asset management</strong>, <strong>end-user support</strong>, and <strong>system troubleshooting</strong>. Skilled in managing full asset lifecycles, deploying and maintaining hardware, and improving workflows using AI and automation. CompTIA <strong>A+</strong> certified and pursuing <strong>Network+</strong>. Bilingual in English and Spanish with a strong customer-first approach.</p>
     </div>
-    <div class="nav-buttons">
-      <button class="btn secondary" disabled>◀ Back</button>
-      <button class="btn" data-next="#experience">Next ▶</button>
-    </div>
-  </section>
 
-  <!-- (rest of your sections remain unchanged) -->
+    <!-- Experience -->
+    <div class="tab-content" id="experience">
+      <h2>Experience</h2>
+      <h3>Senior IT Asset Manager — EOS IT Solutions</h3>
+      <p class="muted">Pflugerville, TX • Jun 2025 – Present</p>
+      <ul>
+        <li>Oversee full lifecycle of IT assets ensuring compliance and optimization.</li>
+        <li>Configure Jira for automated asset tracking and reporting.</li>
+        <li>Lead audits, mentor technicians, and coordinate with vendors.</li>
+      </ul>
+      <hr>
+      <h3>Tech Support — A3 Staffing Solutions</h3>
+      <p class="muted">Temple, TX • Apr 2025 – Present</p>
+      <ul>
+        <li>Perform hospital hardware/software refresh under HIPAA compliance.</li>
+        <li>Install Windows and applications, assist users, and log all deployments.</li>
+      </ul>
+      <hr>
+      <h3>Server Test Technician — Kelly</h3>
+      <p class="muted">Georgetown, TX • Nov 2024 – Apr 2025</p>
+      <ul>
+        <li>Diagnosed Linux-based servers and switches using Python tools.</li>
+        <li>Documented debugging steps and resolutions for continuous improvement.</li>
+      </ul>
+      <hr>
+      <h3>Tech Support Agent — Alorica</h3>
+      <p class="muted">Temple, TX • Dec 2021 – Nov 2022</p>
+      <ul><li>Resolved customer technical issues via remote support and ticketing systems.</li></ul>
+    </div>
+
+    <!-- AI Projects -->
+    <div class="tab-content" id="ai">
+      <h2>AI Projects</h2>
+      <ul>
+        <li>Developed <strong>LLM-powered Helpdesk Agents</strong> for automating troubleshooting and configuration.</li>
+        <li>Integrated AI APIs with Python-based automation scripts to enable real-time diagnostics and intelligent issue resolution.</li>
+        <li>Built conversational AI systems for IT support workflows.</li>
+      </ul>
+      <p><strong>Technical Tools Used:</strong> Python, Grok, OpenAI API, Streamlit, FastAPI, JSON, RESTful APIs</p>
+    </div>
+
+    <!-- Tools -->
+    <div class="tab-content" id="tools">
+      <h2>Software & Tools</h2>
+      <div class="chips">
+        <span class="chip">Jira</span><span class="chip">ServiceNow</span><span class="chip">ChatGPT</span>
+        <span class="chip">Grok</span><span class="chip">MobaXterm</span><span class="chip">Cisco CLI</span>
+        <span class="chip">Windows PowerShell</span><span class="chip">Python</span><span class="chip">GitHub</span>
+        <span class="chip">Google Workspace</span><span class="chip">Microsoft 365</span><span class="chip">Mac Devices</span>
+        <span class="chip">AppleScripts</span><span class="chip">Linux</span>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="tab-content" id="education">
+      <h2>Education</h2>
+      <p><strong>Texas State Technical College</strong> — AAS, Computer Maintenance Technology (2019)</p>
+    </div>
+
+    <!-- Certifications -->
+    <div class="tab-content" id="certs">
+      <h2>Certifications</h2>
+      <ul>
+        <li>CompTIA A+ (Active)</li>
+        <li>CompTIA Network+ (In Progress)</li>
+      </ul>
+      <p class="muted" style="margin-top:10px">© 2025 Ezekiel Correa • Background design inspired by modern portfolio layouts</p>
+    </div>
+
+  </main>
 
   <script>
-    // Button navigation
-    function goTo(id){
-      const el = document.querySelector(id);
-      if(!el) return;
-      el.scrollIntoView({behavior:'smooth', block:'start'});
-      history.replaceState(null, '', id);
+    // Tab Navigation
+    const links=document.querySelectorAll('.nav-links a');
+    const tabs=document.querySelectorAll('.tab-content');
+    links.forEach(link=>{
+      link.addEventListener('click',e=>{
+        e.preventDefault();
+        links.forEach(l=>l.classList.remove('active'));
+        link.classList.add('active');
+        const id=link.getAttribute('data-tab');
+        tabs.forEach(t=>t.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+      });
+    });
+
+    // Light/Dark Mode Toggle
+    const modeBtn=document.getElementById('modeToggle');
+    modeBtn.addEventListener('click',()=>{
+      document.body.classList.toggle('light');
+      const isLight=document.body.classList.contains('light');
+      modeBtn.textContent=isLight?'🌞':'🌙';
+      localStorage.setItem('resume-mode',isLight?'light':'dark');
+    });
+    if(localStorage.getItem('resume-mode')==='light'){
+      document.body.classList.add('light');
+      modeBtn.textContent='🌞';
     }
-    document.addEventListener('click', (e) => {
-      const next = e.target.getAttribute('data-next');
-      const prev = e.target.getAttribute('data-prev');
-      if(next){ e.preventDefault(); goTo(next); }
-      if(prev){ e.preventDefault(); goTo(prev); }
-    });
-    window.addEventListener('load', () => {
-      if(location.hash){
-        setTimeout(()=>goTo(location.hash), 100);
-      }
-    });
   </script>
 </body>
 </html>
