@@ -6,17 +6,16 @@
 <title>Ezekiel Correa — Resume</title>
 <meta name="description" content="Modern portfolio-style resume for Ezekiel Correa — IT Support, AI Projects, Systems Troubleshooting.">
 <style>
-  /* Root Theme */
-  :root {
+  :root{
     --bg:#0b1220;
     --panel:#0f172a;
     --ink:#e5e7eb;
     --muted:#94a3b8;
-    --accent:#00bfff;   /* electric blue */
-    --accent-2:#1e90ff; /* button blue */
+    --accent:#00bfff;
+    --accent-2:#1e90ff;
     --rule:#1f2a44;
   }
-  body.light {
+  body.light{
     --bg:#f9fafb;
     --panel:#ffffff;
     --ink:#1e293b;
@@ -25,324 +24,248 @@
     --accent-2:#1d4ed8;
     --rule:#cbd5e1;
   }
-
   *{box-sizing:border-box}
-  html,body {
-    margin:0; padding:0;
-    background:var(--bg); color:var(--ink);
-    font:16px/1.6 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    transition:background .5s, color .5s;
+  html,body{
+    margin:0;padding:0;
+    background:var(--bg);color:var(--ink);
+    font:16px/1.6 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    transition:background .5s,color .5s;
   }
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
 
-  a { color:var(--accent); text-decoration:none; }
-  a:hover { text-decoration:underline; }
-
-  /* Top Navigation */
-  .topbar {
-    display:flex; justify-content:space-between; align-items:center;
-    padding:12px 24px;
-    background:var(--panel);
-    border-bottom:1px solid var(--rule);
-    position:sticky; top:0; z-index:1000;
-    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  /* Topbar */
+  .topbar{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:12px 24px;background:var(--panel);border-bottom:1px solid var(--rule);
+    position:sticky;top:0;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.2);
   }
-  .logo { font-weight:700; font-size:1.3rem; }
-  .nav-links { display:flex; align-items:center; gap:20px; }
-  .nav-links a { color:var(--ink); font-weight:600; transition:color .3s; }
-  .nav-links a:hover, .nav-links a.active { color:var(--accent); }
-  .mode-btn {
-    background:var(--accent-2); border:none;
-    color:#fff; width:40px; height:40px;
-    border-radius:50%; font-size:1.1rem;
-    display:flex; align-items:center; justify-content:center;
-    cursor:pointer; box-shadow:0 3px 10px rgba(0,0,0,.3);
+  .logo{font-weight:700;font-size:1.3rem}
+  .nav-links{display:flex;align-items:center;gap:20px}
+  .nav-links a{color:var(--ink);font-weight:600;transition:color .3s}
+  .nav-links a:hover,.nav-links a.active{color:var(--accent)}
+  .mode-btn{
+    background:var(--accent-2);border:none;color:#fff;width:40px;height:40px;
+    border-radius:50%;font-size:1.1rem;display:flex;align-items:center;justify-content:center;
+    cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.3);
   }
 
   /* Tabs */
-  .tabs { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; padding:40px 16px; }
-  .tab-content {
-    display:none; max-width:950px; width:92vw;
-    background:var(--panel); border-radius:20px; padding:50px;
-    box-shadow:0 10px 30px rgba(0,0,0,.25); animation:fade .5s ease;
-  }
-  .tab-content.active { display:block; }
+  .tabs{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:40px 16px}
+  .tab-content{display:none;max-width:950px;width:92vw;background:var(--panel);border-radius:20px;padding:50px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);animation:fade .5s ease}
+  .tab-content.active{display:block}
 
-  /* Hero (Summary) */
-  .hero { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:40px; }
-  .hero-text { flex:1 1 350px; }
-  .hero h1 { font-size:2.5rem; margin:0 0 10px; color:#fff; }
-  .hero h2 { font-size:1.3rem; font-weight:600; color:var(--accent); }
-  .hero p { color:var(--muted); max-width:480px; }
-  .buttons { margin-top:20px; display:flex; gap:14px; align-items:center; }
-  .btn {
-    background:var(--accent-2); color:#fff; border:none;
-    padding:10px 18px; border-radius:8px; font-weight:700; cursor:pointer; transition:all .3s;
-  }
-  .btn:hover { background:var(--accent); transform:translateY(-2px); }
+  /* Hero */
+  .hero{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px}
+  .hero-text{flex:1 1 350px}
+  .hero h1{font-size:2.5rem;margin:0 0 10px;color:#fff}
+  .hero h2{font-size:1.3rem;font-weight:600;color:var(--accent)}
+  .hero p{color:var(--muted);max-width:480px}
+  .buttons{margin-top:20px;display:flex;gap:14px;align-items:center}
+  .btn{background:var(--accent-2);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-weight:700;cursor:pointer;transition:all .3s}
+  .btn:hover{background:var(--accent);transform:translateY(-2px)}
 
-  /* Social bubbles */
-  .socials { display:flex; gap:12px; margin-top:25px; }
-  .socials a {
-    width:44px; height:44px; border-radius:50%;
-    background:rgba(0,191,255,0.15);
-    display:flex; align-items:center; justify-content:center;
-    color:var(--accent); font-size:1.25rem;
-    transition:all .25s ease;
-    box-shadow:0 0 0 rgba(0,191,255,0);
+  /* Social bubbles (logos only) */
+  .socials{display:flex;gap:12px;margin-top:25px}
+  .socials a{
+    width:44px;height:44px;border-radius:50%;background:rgba(0,191,255,0.15);
+    display:flex;align-items:center;justify-content:center;color:var(--accent);
+    font-size:1.4rem;transition:all .25s ease;box-shadow:0 0 0 rgba(0,191,255,0);
   }
-  .socials a:hover {
-    background:var(--accent); color:#fff; transform:scale(1.08);
+  .socials a:hover{
+    background:var(--accent);color:#fff;transform:scale(1.08);
     box-shadow:0 0 16px rgba(0,191,255,0.65);
   }
 
-  /* Hexagon Photo */
-  .photo-frame {
-    width:260px; height:300px;
+  /* Hex photo */
+  .photo-frame{
+    width:260px;height:300px;
     clip-path:polygon(25% 6%,75% 6%,100% 50%,75% 94%,25% 94%,0% 50%);
     background:var(--accent);
-    display:flex; align-items:center; justify-content:center;
+    display:flex;align-items:center;justify-content:center;
     box-shadow:0 0 25px var(--accent);
   }
-  .photo-frame img {
-    width:240px; height:280px; border-radius:10px; object-fit:cover; clip-path:inherit;
+  .photo-frame img{
+    width:240px;height:280px;object-fit:cover;clip-path:inherit;border-radius:10px;
   }
 
-  /* Headings & basics */
-  h2 { text-transform:uppercase; letter-spacing:.1rem; margin-top:0; }
-  ul{margin:10px 0 0 18px} li{margin:7px 0;color:var(--ink)}
+  h2{text-transform:uppercase;letter-spacing:.1rem;margin-top:0}
+  ul{margin:10px 0 0 18px}
+  li{margin:7px 0;color:var(--ink)}
   .muted{color:var(--muted)}
   hr{border:none;border-top:1px solid var(--rule);margin:20px 0}
-  @keyframes fade { from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;} }
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-  /* TOOLS GRID (brand logos) */
-  .tools-grid {
+  /* Tool grid */
+  .tools-grid{
     display:grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap:18px;
-    align-items:center;
+    grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
+    gap:22px;align-items:center;justify-items:center;
   }
-  @media (max-width:1000px){ .tools-grid{ grid-template-columns: repeat(4, 1fr);} }
-  @media (max-width:700px){  .tools-grid{ grid-template-columns: repeat(3, 1fr);} }
-  @media (max-width:480px){  .tools-grid{ grid-template-columns: repeat(2, 1fr);} }
-  .tool {
+  .tool{
     background:rgba(255,255,255,0.02);
     border:1px solid var(--rule);
     border-radius:14px;
-    padding:14px;
-    display:flex; align-items:center; justify-content:center;
-    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    padding:16px;
+    display:flex;align-items:center;justify-content:center;
+    transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
   }
-  .tool:hover { transform:translateY(-3px); background:rgba(0,191,255,0.06); box-shadow:0 6px 18px rgba(0,191,255,0.15); }
-  .tool img, .tool svg {
-    width:40px; height:40px; display:block;
+  .tool:hover{
+    transform:translateY(-3px);
+    background:rgba(0,191,255,0.06);
+    box-shadow:0 6px 18px rgba(0,191,255,0.15);
   }
-  .sr-only {
-    position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;
-  }
+  .tool img{width:48px;height:48px;object-fit:contain}
 
   @media(max-width:768px){
     .hero{flex-direction:column;text-align:center}
-    .photo-frame{width:220px;height:260px;}
-    .photo-frame img{width:200px;height:240px;}
+    .photo-frame{width:220px;height:260px}
+    .photo-frame img{width:200px;height:240px}
   }
 </style>
-<!-- Font Awesome for social icons -->
 <script src="https://kit.fontawesome.com/a2e0e6e6b0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Top Navigation -->
-  <header class="topbar">
-    <div class="logo">Ezekiel Correa</div>
-    <div class="nav-links">
-      <a href="#" data-tab="summary" class="active">Home</a>
-      <a href="#" data-tab="experience">Experience</a>
-      <a href="#" data-tab="ai">AI</a>
-      <a href="#" data-tab="tools">Tools</a>
-      <a href="#" data-tab="education">Education</a>
-      <a href="#" data-tab="certs">Certs</a>
-      <button class="mode-btn" id="modeToggle">🌙</button>
-    </div>
-  </header>
+<header class="topbar">
+  <div class="logo">Ezekiel Correa</div>
+  <div class="nav-links">
+    <a href="#" data-tab="summary" class="active">Home</a>
+    <a href="#" data-tab="experience">Experience</a>
+    <a href="#" data-tab="ai">AI</a>
+    <a href="#" data-tab="tools">Tools</a>
+    <a href="#" data-tab="education">Education</a>
+    <a href="#" data-tab="certs">Certs</a>
+    <button class="mode-btn" id="modeToggle">🌙</button>
+  </div>
+</header>
 
-  <main class="tabs">
-    <!-- Summary / Hero -->
-    <div class="tab-content active" id="summary">
-      <div class="hero">
-        <div class="hero-text">
-          <h1>Hello, I'm<br><strong>Ezekiel Correa</strong></h1>
-          <h2>IT Support & AI Automation Specialist</h2>
-          <p>Experienced IT professional specializing in asset management, automation, and system troubleshooting. Passionate about streamlining workflows and integrating AI into modern IT support systems.</p>
-          <div class="buttons">
-            <a href="#" class="btn" onclick="window.print()">Download CV</a>
-          </div>
-          <div class="socials">
-            <a href="https://github.com/ElSpaniard97" target="_blank" title="GitHub" aria-label="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/ezekiel-correa-117a50305" target="_blank" title="LinkedIn" aria-label="LinkedIn">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </div>
+<main class="tabs">
+  <!-- Home -->
+  <div class="tab-content active" id="summary">
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Hello, I'm<br><strong>Ezekiel Correa</strong></h1>
+        <h2>IT Support & AI Automation Specialist</h2>
+        <p>Experienced IT professional specializing in asset management, automation, and system troubleshooting. Passionate about streamlining workflows and integrating AI into modern IT support systems.</p>
+        <div class="buttons">
+          <a href="#" class="btn" onclick="window.print()">Download CV</a>
         </div>
-        <div class="photo-frame">
-          <img src="https://raw.githubusercontent.com/ElSpaniard97/ezekiel-correa-resume/main/2986ED64-9F11-46B7-ACAF-379171DE8CB3.jpeg" alt="Ezekiel Correa">
+        <div class="socials">
+          <a href="https://github.com/ElSpaniard97" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/ezekiel-correa-117a50305" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
-    </div>
-
-    <!-- Experience -->
-    <div class="tab-content" id="experience">
-      <h2>Experience</h2>
-      <h3>Senior IT Asset Manager — EOS IT Solutions</h3>
-      <p class="muted">Pflugerville, TX • Jun 2025 – Present</p>
-      <ul>
-        <li>Oversee full lifecycle of IT assets ensuring compliance and optimization.</li>
-        <li>Configure Jira for automated asset tracking and reporting.</li>
-        <li>Lead audits, mentor technicians, and coordinate with vendors.</li>
-      </ul>
-      <hr>
-      <h3>Tech Support — A3 Staffing Solutions</h3>
-      <p class="muted">Temple, TX • Apr 2025 – Present</p>
-      <ul>
-        <li>Perform hospital hardware/software refresh under HIPAA compliance.</li>
-        <li>Install Windows and applications, assist users, and log all deployments.</li>
-      </ul>
-      <hr>
-      <h3>Server Test Technician — Kelly</h3>
-      <p class="muted">Georgetown, TX • Nov 2024 – Apr 2025</p>
-      <ul>
-        <li>Diagnosed Linux-based servers and switches using Python tools.</li>
-        <li>Documented debugging steps and resolutions for continuous improvement.</li>
-      </ul>
-      <hr>
-      <h3>Tech Support Agent — Alorica</h3>
-      <p class="muted">Temple, TX • Dec 2021 – Nov 2022</p>
-      <ul><li>Resolved customer technical issues via remote support and ticketing systems.</li></ul>
-    </div>
-
-    <!-- AI Projects -->
-    <div class="tab-content" id="ai">
-      <h2>AI Projects</h2>
-      <ul>
-        <li>Developed <strong>LLM-powered Helpdesk Agents</strong> for automating troubleshooting and configuration.</li>
-        <li>Integrated AI APIs with Python-based automation scripts to enable real-time diagnostics and intelligent issue resolution.</li>
-        <li>Built conversational AI systems for IT support workflows.</li>
-      </ul>
-      <p><strong>Technical Tools Used:</strong> Python, Grok, OpenAI API, Streamlit, FastAPI, JSON, RESTful APIs</p>
-    </div>
-
-    <!-- Tools (LOGO GRID) -->
-    <div class="tab-content" id="tools">
-      <h2>Software & Tools</h2>
-      <p class="muted" style="margin-top:0">Brand-colored logos (online sources). Hover for names.</p>
-      <div class="tools-grid">
-        <!-- Jira -->
-        <a class="tool" href="https://www.atlassian.com/software/jira" target="_blank" title="Jira" aria-label="Jira">
-          <img alt="Jira logo" src="https://cdn.simpleicons.org/jira" />
-        </a>
-        <!-- ServiceNow -->
-        <a class="tool" href="https://www.servicenow.com/" target="_blank" title="ServiceNow" aria-label="ServiceNow">
-          <img alt="ServiceNow logo" src="https://cdn.simpleicons.org/servicenow" />
-        </a>
-        <!-- ChatGPT / OpenAI -->
-        <a class="tool" href="https://openai.com/" target="_blank" title="OpenAI / ChatGPT" aria-label="OpenAI">
-          <img alt="OpenAI logo" src="https://cdn.simpleicons.org/openai" />
-        </a>
-        <!-- Grok (xAI) – using X logo as proxy -->
-        <a class="tool" href="https://x.ai/" target="_blank" title="Grok (xAI)" aria-label="Grok xAI">
-          <img alt="X / xAI logo" src="https://cdn.simpleicons.org/x" />
-        </a>
-        <!-- MobaXterm – terminal proxy icon -->
-        <a class="tool" href="https://mobaxterm.mobatek.net/" target="_blank" title="MobaXterm" aria-label="MobaXterm">
-          <img alt="Terminal icon" src="https://cdn.simpleicons.org/gnometerminal" />
-        </a>
-        <!-- Cisco -->
-        <a class="tool" href="https://www.cisco.com/" target="_blank" title="Cisco" aria-label="Cisco">
-          <img alt="Cisco logo" src="https://cdn.simpleicons.org/cisco" />
-        </a>
-        <!-- PowerShell -->
-        <a class="tool" href="https://learn.microsoft.com/powershell/" target="_blank" title="PowerShell" aria-label="PowerShell">
-          <img alt="PowerShell logo" src="https://cdn.simpleicons.org/powershell" />
-        </a>
-        <!-- Python -->
-        <a class="tool" href="https://www.python.org/" target="_blank" title="Python" aria-label="Python">
-          <img alt="Python logo" src="https://cdn.simpleicons.org/python" />
-        </a>
-        <!-- GitHub -->
-        <a class="tool" href="https://github.com/" target="_blank" title="GitHub" aria-label="GitHub">
-          <img alt="GitHub logo" src="https://cdn.simpleicons.org/github" />
-        </a>
-        <!-- Google Workspace -->
-        <a class="tool" href="https://workspace.google.com/" target="_blank" title="Google Workspace" aria-label="Google Workspace">
-          <img alt="Google logo" src="https://cdn.simpleicons.org/google" />
-        </a>
-        <!-- Microsoft 365 -->
-        <a class="tool" href="https://www.microsoft.com/microsoft-365" target="_blank" title="Microsoft 365" aria-label="Microsoft 365">
-          <img alt="Microsoft Office logo" src="https://cdn.simpleicons.org/microsoftoffice" />
-        </a>
-        <!-- macOS -->
-        <a class="tool" href="https://www.apple.com/macos/" target="_blank" title="macOS" aria-label="macOS">
-          <img alt="Apple logo" src="https://cdn.simpleicons.org/apple" />
-        </a>
-        <!-- AppleScript (Apple + code proxy) -->
-        <a class="tool" href="https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html" target="_blank" title="AppleScript" aria-label="AppleScript">
-          <img alt="Apple logo" src="https://cdn.simpleicons.org/apple" />
-        </a>
-        <!-- Linux -->
-        <a class="tool" href="https://www.kernel.org/" target="_blank" title="Linux" aria-label="Linux">
-          <img alt="Linux logo" src="https://cdn.simpleicons.org/linux" />
-        </a>
+      <div class="photo-frame">
+        <img src="https://raw.githubusercontent.com/ElSpaniard97/ezekiel-correa-resume/main/2986ED64-9F11-46B7-ACAF-379171DE8CB3.jpeg" alt="Ezekiel Correa">
       </div>
     </div>
+  </div>
 
-    <!-- Education -->
-    <div class="tab-content" id="education">
-      <h2>Education</h2>
-      <p><strong>Texas State Technical College</strong> — AAS, Computer Maintenance Technology (2019)</p>
+  <!-- Experience -->
+  <div class="tab-content" id="experience">
+    <h2>Experience</h2>
+    <h3>Senior IT Asset Manager — EOS IT Solutions</h3>
+    <p class="muted">Pflugerville, TX • Jun 2025 – Present</p>
+    <ul>
+      <li>Oversee full lifecycle of IT assets ensuring compliance and optimization.</li>
+      <li>Configure Jira for automated asset tracking and reporting.</li>
+      <li>Lead audits, mentor technicians, and coordinate with vendors.</li>
+    </ul>
+    <hr>
+    <h3>Tech Support — A3 Staffing Solutions</h3>
+    <p class="muted">Temple, TX • Apr 2025 – Present</p>
+    <ul>
+      <li>Perform hospital hardware/software refresh under HIPAA compliance.</li>
+      <li>Install Windows and applications, assist users, and log all deployments.</li>
+    </ul>
+    <hr>
+    <h3>Server Test Technician — Kelly</h3>
+    <p class="muted">Georgetown, TX • Nov 2024 – Apr 2025</p>
+    <ul>
+      <li>Diagnosed Linux-based servers and switches using Python tools.</li>
+      <li>Documented debugging steps and resolutions for continuous improvement.</li>
+    </ul>
+    <hr>
+    <h3>Tech Support Agent — Alorica</h3>
+    <p class="muted">Temple, TX • Dec 2021 – Nov 2022</p>
+    <ul><li>Resolved customer technical issues via remote support and ticketing systems.</li></ul>
+  </div>
+
+  <!-- AI -->
+  <div class="tab-content" id="ai">
+    <h2>AI Projects</h2>
+    <ul>
+      <li>Developed <strong>LLM-powered Helpdesk Agents</strong> for automating troubleshooting and configuration.</li>
+      <li>Integrated AI APIs with Python-based automation scripts for real-time diagnostics.</li>
+      <li>Built conversational AI systems for IT support workflows.</li>
+    </ul>
+    <p><strong>Technical Tools Used:</strong> Python, Grok, OpenAI API, Streamlit, FastAPI, JSON, RESTful APIs</p>
+  </div>
+
+  <!-- Tools -->
+  <div class="tab-content" id="tools">
+    <h2>Software & Tools</h2>
+    <div class="tools-grid">
+      <a class="tool" href="https://www.atlassian.com/software/jira" target="_blank"><img src="https://cdn.simpleicons.org/jira" alt="Jira"></a>
+      <a class="tool" href="https://www.servicenow.com/" target="_blank"><img src="https://cdn.simpleicons.org/servicenow" alt="ServiceNow"></a>
+      <a class="tool" href="https://openai.com/" target="_blank"><img src="https://cdn.simpleicons.org/openai" alt="OpenAI"></a>
+      <a class="tool" href="https://x.ai/" target="_blank"><img src="https://cdn.simpleicons.org/x" alt="Grok"></a>
+      <a class="tool" href="https://mobaxterm.mobatek.net/" target="_blank"><img src="https://cdn.simpleicons.org/gnometerminal" alt="MobaXterm"></a>
+      <a class="tool" href="https://www.cisco.com/" target="_blank"><img src="https://cdn.simpleicons.org/cisco" alt="Cisco"></a>
+      <a class="tool" href="https://learn.microsoft.com/powershell/" target="_blank"><img src="https://cdn.simpleicons.org/powershell" alt="PowerShell"></a>
+      <a class="tool" href="https://www.python.org/" target="_blank"><img src="https://cdn.simpleicons.org/python" alt="Python"></a>
+      <a class="tool" href="https://github.com/" target="_blank"><img src="https://cdn.simpleicons.org/github" alt="GitHub"></a>
+      <a class="tool" href="https://workspace.google.com/" target="_blank"><img src="https://cdn.simpleicons.org/google" alt="Google Workspace"></a>
+      <a class="tool" href="https://www.microsoft.com/microsoft-365" target="_blank"><img src="https://cdn.simpleicons.org/microsoftoffice" alt="Microsoft 365"></a>
+      <a class="tool" href="https://www.apple.com/macos/" target="_blank"><img src="https://cdn.simpleicons.org/apple" alt="macOS"></a>
+      <a class="tool" href="https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html" target="_blank"><img src="https://cdn.simpleicons.org/apple" alt="AppleScript"></a>
+      <a class="tool" href="https://www.kernel.org/" target="_blank"><img src="https://cdn.simpleicons.org/linux" alt="Linux"></a>
     </div>
+  </div>
 
-    <!-- Certifications -->
-    <div class="tab-content" id="certs">
-      <h2>Certifications</h2>
-      <ul>
-        <li>CompTIA A+ (Active)</li>
-        <li>CompTIA Network+ (In Progress)</li>
-      </ul>
-      <p class="muted" style="margin-top:10px">© 2025 Ezekiel Correa • Brand icons via Simple Icons CDN</p>
-    </div>
+  <!-- Education -->
+  <div class="tab-content" id="education">
+    <h2>Education</h2>
+    <p><strong>Texas State Technical College</strong> — AAS, Computer Maintenance Technology (2019)</p>
+  </div>
 
-  </main>
+  <!-- Certs -->
+  <div class="tab-content" id="certs">
+    <h2>Certifications</h2>
+    <ul>
+      <li>CompTIA A+ (Active)</li>
+      <li>CompTIA Network+ (In Progress)</li>
+    </ul>
+    <p class="muted" style="margin-top:10px">© 2025 Ezekiel Correa • Brand icons via Simple Icons CDN</p>
+  </div>
+</main>
 
-  <script>
-    // Tab Navigation
-    const links=document.querySelectorAll('.nav-links a');
-    const tabs=document.querySelectorAll('.tab-content');
-    links.forEach(link=>{
-      link.addEventListener('click',e=>{
-        e.preventDefault();
-        links.forEach(l=>l.classList.remove('active'));
-        link.classList.add('active');
-        const id=link.getAttribute('data-tab');
-        tabs.forEach(t=>t.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
-        // focus first heading for a11y
-        const firstH = document.getElementById(id).querySelector('h2, h1');
-        if(firstH) firstH.setAttribute('tabindex','-1'), firstH.focus();
-      });
+<script>
+  const links=document.querySelectorAll('.nav-links a');
+  const tabs=document.querySelectorAll('.tab-content');
+  links.forEach(link=>{
+    link.addEventListener('click',e=>{
+      e.preventDefault();
+      links.forEach(l=>l.classList.remove('active'));
+      link.classList.add('active');
+      const id=link.getAttribute('data-tab');
+      tabs.forEach(t=>t.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
     });
+  });
 
-    // Light/Dark Mode Toggle
-    const modeBtn=document.getElementById('modeToggle');
-    modeBtn.addEventListener('click',()=>{
-      document.body.classList.toggle('light');
-      const isLight=document.body.classList.contains('light');
-      modeBtn.textContent=isLight?'🌞':'🌙';
-      localStorage.setItem('resume-mode',isLight?'light':'dark');
-    });
-    if(localStorage.getItem('resume-mode')==='light'){
-      document.body.classList.add('light');
-      modeBtn.textContent='🌞';
-    }
-  </script>
+  const modeBtn=document.getElementById('modeToggle');
+  modeBtn.addEventListener('click',()=>{
+    document.body.classList.toggle('light');
+    const isLight=document.body.classList.contains('light');
+    modeBtn.textContent=isLight?'🌞':'🌙';
+    localStorage.setItem('resume-mode',isLight?'light':'dark');
+  });
+  if(localStorage.getItem('resume-mode')==='light'){
+    document.body.classList.add('light');
+    modeBtn.textContent='🌞';
+  }
+</script>
 </body>
 </html>
