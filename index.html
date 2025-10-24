@@ -12,8 +12,8 @@
     --panel:#0f172a;
     --ink:#e5e7eb;
     --muted:#94a3b8;
-    --accent:#00bfff;
-    --accent-2:#1e90ff;
+    --accent:#00bfff;   /* electric blue */
+    --accent-2:#1e90ff; /* button blue */
     --rule:#1f2a44;
   }
   body.light {
@@ -46,19 +46,10 @@
     position:sticky; top:0; z-index:1000;
     box-shadow:0 2px 8px rgba(0,0,0,0.2);
   }
-  .logo {
-    font-weight:700; font-size:1.3rem;
-  }
-  .nav-links {
-    display:flex; align-items:center; gap:20px;
-  }
-  .nav-links a {
-    color:var(--ink);
-    font-weight:600;
-    transition:color .3s;
-  }
+  .logo { font-weight:700; font-size:1.3rem; }
+  .nav-links { display:flex; align-items:center; gap:20px; }
+  .nav-links a { color:var(--ink); font-weight:600; transition:color .3s; }
   .nav-links a:hover, .nav-links a.active { color:var(--accent); }
-
   .mode-btn {
     background:var(--accent-2); border:none;
     color:#fff; width:40px; height:40px;
@@ -67,74 +58,44 @@
     cursor:pointer; box-shadow:0 3px 10px rgba(0,0,0,.3);
   }
 
-  /* Tab Layout */
-  .tabs {
-    display:flex; flex-direction:column;
-    align-items:center; justify-content:center;
-    min-height:100vh;
-    padding:40px 16px;
-  }
-
+  /* Tabs */
+  .tabs { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; padding:40px 16px; }
   .tab-content {
-    display:none;
-    max-width:950px; width:92vw;
-    background:var(--panel);
-    border-radius:20px;
-    padding:50px;
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
-    animation:fade .5s ease;
+    display:none; max-width:950px; width:92vw;
+    background:var(--panel); border-radius:20px; padding:50px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25); animation:fade .5s ease;
   }
   .tab-content.active { display:block; }
 
-  /* Hero Section (Summary Tab) */
-  .hero {
-    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
-    gap:40px;
-  }
-  .hero-text {
-    flex:1 1 350px;
-  }
-  .hero h1 {
-    font-size:2.5rem; margin:0 0 10px; color:#fff;
-  }
-  .hero h2 {
-    font-size:1.3rem; font-weight:600; color:var(--accent);
-  }
+  /* Hero (Summary) */
+  .hero { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:40px; }
+  .hero-text { flex:1 1 350px; }
+  .hero h1 { font-size:2.5rem; margin:0 0 10px; color:#fff; }
+  .hero h2 { font-size:1.3rem; font-weight:600; color:var(--accent); }
   .hero p { color:var(--muted); max-width:480px; }
-  .buttons {
-    margin-top:20px; display:flex; gap:14px; align-items:center;
-  }
+  .buttons { margin-top:20px; display:flex; gap:14px; align-items:center; }
   .btn {
-    background:var(--accent-2);
-    color:#fff;
-    border:none;
-    padding:10px 18px;
-    border-radius:8px;
-    font-weight:700;
-    cursor:pointer;
-    transition:all .3s;
+    background:var(--accent-2); color:#fff; border:none;
+    padding:10px 18px; border-radius:8px; font-weight:700; cursor:pointer; transition:all .3s;
   }
   .btn:hover { background:var(--accent); transform:translateY(-2px); }
 
-  /* Social Icons */
-  .socials {
-    display:flex; gap:12px; margin-top:25px;
-  }
+  /* Social bubbles */
+  .socials { display:flex; gap:12px; margin-top:25px; }
   .socials a {
-    width:40px; height:40px;
-    border-radius:50%;
+    width:44px; height:44px; border-radius:50%;
     background:rgba(0,191,255,0.15);
     display:flex; align-items:center; justify-content:center;
-    color:var(--accent);
-    font-size:1.2rem;
-    transition:all .3s;
+    color:var(--accent); font-size:1.25rem;
+    transition:all .25s ease;
+    box-shadow:0 0 0 rgba(0,191,255,0);
   }
   .socials a:hover {
-    background:var(--accent); color:#fff;
-    transform:scale(1.1);
+    background:var(--accent); color:#fff; transform:scale(1.08);
+    box-shadow:0 0 16px rgba(0,191,255,0.65);
   }
 
-  /* Hexagon Photo Mask */
+  /* Hexagon Photo */
   .photo-frame {
     width:260px; height:300px;
     clip-path:polygon(25% 6%,75% 6%,100% 50%,75% 94%,25% 94%,0% 50%);
@@ -143,19 +104,41 @@
     box-shadow:0 0 25px var(--accent);
   }
   .photo-frame img {
-    width:240px; height:280px;
-    border-radius:10px;
-    object-fit:cover;
-    clip-path:inherit;
+    width:240px; height:280px; border-radius:10px; object-fit:cover; clip-path:inherit;
   }
 
-  /* Common Elements */
+  /* Headings & basics */
   h2 { text-transform:uppercase; letter-spacing:.1rem; margin-top:0; }
-  ul{margin:10px 0 0 18px}
-  li{margin:7px 0;color:var(--ink)}
+  ul{margin:10px 0 0 18px} li{margin:7px 0;color:var(--ink)}
   .muted{color:var(--muted)}
   hr{border:none;border-top:1px solid var(--rule);margin:20px 0}
   @keyframes fade { from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;} }
+
+  /* TOOLS GRID (brand logos) */
+  .tools-grid {
+    display:grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap:18px;
+    align-items:center;
+  }
+  @media (max-width:1000px){ .tools-grid{ grid-template-columns: repeat(4, 1fr);} }
+  @media (max-width:700px){  .tools-grid{ grid-template-columns: repeat(3, 1fr);} }
+  @media (max-width:480px){  .tools-grid{ grid-template-columns: repeat(2, 1fr);} }
+  .tool {
+    background:rgba(255,255,255,0.02);
+    border:1px solid var(--rule);
+    border-radius:14px;
+    padding:14px;
+    display:flex; align-items:center; justify-content:center;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .tool:hover { transform:translateY(-3px); background:rgba(0,191,255,0.06); box-shadow:0 6px 18px rgba(0,191,255,0.15); }
+  .tool img, .tool svg {
+    width:40px; height:40px; display:block;
+  }
+  .sr-only {
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;
+  }
 
   @media(max-width:768px){
     .hero{flex-direction:column;text-align:center}
@@ -163,6 +146,7 @@
     .photo-frame img{width:200px;height:240px;}
   }
 </style>
+<!-- Font Awesome for social icons -->
 <script src="https://kit.fontawesome.com/a2e0e6e6b0.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -181,7 +165,6 @@
   </header>
 
   <main class="tabs">
-
     <!-- Summary / Hero -->
     <div class="tab-content active" id="summary">
       <div class="hero">
@@ -193,8 +176,12 @@
             <a href="#" class="btn" onclick="window.print()">Download CV</a>
           </div>
           <div class="socials">
-            <a href="https://github.com/ElSpaniard97" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/ezekiel-correa-117a50305" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/ElSpaniard97" target="_blank" title="GitHub" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ezekiel-correa-117a50305" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
           </div>
         </div>
         <div class="photo-frame">
@@ -244,15 +231,67 @@
       <p><strong>Technical Tools Used:</strong> Python, Grok, OpenAI API, Streamlit, FastAPI, JSON, RESTful APIs</p>
     </div>
 
-    <!-- Tools -->
+    <!-- Tools (LOGO GRID) -->
     <div class="tab-content" id="tools">
       <h2>Software & Tools</h2>
-      <div class="chips">
-        <span class="chip">Jira</span><span class="chip">ServiceNow</span><span class="chip">ChatGPT</span>
-        <span class="chip">Grok</span><span class="chip">MobaXterm</span><span class="chip">Cisco CLI</span>
-        <span class="chip">Windows PowerShell</span><span class="chip">Python</span><span class="chip">GitHub</span>
-        <span class="chip">Google Workspace</span><span class="chip">Microsoft 365</span><span class="chip">Mac Devices</span>
-        <span class="chip">AppleScripts</span><span class="chip">Linux</span>
+      <p class="muted" style="margin-top:0">Brand-colored logos (online sources). Hover for names.</p>
+      <div class="tools-grid">
+        <!-- Jira -->
+        <a class="tool" href="https://www.atlassian.com/software/jira" target="_blank" title="Jira" aria-label="Jira">
+          <img alt="Jira logo" src="https://cdn.simpleicons.org/jira" />
+        </a>
+        <!-- ServiceNow -->
+        <a class="tool" href="https://www.servicenow.com/" target="_blank" title="ServiceNow" aria-label="ServiceNow">
+          <img alt="ServiceNow logo" src="https://cdn.simpleicons.org/servicenow" />
+        </a>
+        <!-- ChatGPT / OpenAI -->
+        <a class="tool" href="https://openai.com/" target="_blank" title="OpenAI / ChatGPT" aria-label="OpenAI">
+          <img alt="OpenAI logo" src="https://cdn.simpleicons.org/openai" />
+        </a>
+        <!-- Grok (xAI) – using X logo as proxy -->
+        <a class="tool" href="https://x.ai/" target="_blank" title="Grok (xAI)" aria-label="Grok xAI">
+          <img alt="X / xAI logo" src="https://cdn.simpleicons.org/x" />
+        </a>
+        <!-- MobaXterm – terminal proxy icon -->
+        <a class="tool" href="https://mobaxterm.mobatek.net/" target="_blank" title="MobaXterm" aria-label="MobaXterm">
+          <img alt="Terminal icon" src="https://cdn.simpleicons.org/gnometerminal" />
+        </a>
+        <!-- Cisco -->
+        <a class="tool" href="https://www.cisco.com/" target="_blank" title="Cisco" aria-label="Cisco">
+          <img alt="Cisco logo" src="https://cdn.simpleicons.org/cisco" />
+        </a>
+        <!-- PowerShell -->
+        <a class="tool" href="https://learn.microsoft.com/powershell/" target="_blank" title="PowerShell" aria-label="PowerShell">
+          <img alt="PowerShell logo" src="https://cdn.simpleicons.org/powershell" />
+        </a>
+        <!-- Python -->
+        <a class="tool" href="https://www.python.org/" target="_blank" title="Python" aria-label="Python">
+          <img alt="Python logo" src="https://cdn.simpleicons.org/python" />
+        </a>
+        <!-- GitHub -->
+        <a class="tool" href="https://github.com/" target="_blank" title="GitHub" aria-label="GitHub">
+          <img alt="GitHub logo" src="https://cdn.simpleicons.org/github" />
+        </a>
+        <!-- Google Workspace -->
+        <a class="tool" href="https://workspace.google.com/" target="_blank" title="Google Workspace" aria-label="Google Workspace">
+          <img alt="Google logo" src="https://cdn.simpleicons.org/google" />
+        </a>
+        <!-- Microsoft 365 -->
+        <a class="tool" href="https://www.microsoft.com/microsoft-365" target="_blank" title="Microsoft 365" aria-label="Microsoft 365">
+          <img alt="Microsoft Office logo" src="https://cdn.simpleicons.org/microsoftoffice" />
+        </a>
+        <!-- macOS -->
+        <a class="tool" href="https://www.apple.com/macos/" target="_blank" title="macOS" aria-label="macOS">
+          <img alt="Apple logo" src="https://cdn.simpleicons.org/apple" />
+        </a>
+        <!-- AppleScript (Apple + code proxy) -->
+        <a class="tool" href="https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html" target="_blank" title="AppleScript" aria-label="AppleScript">
+          <img alt="Apple logo" src="https://cdn.simpleicons.org/apple" />
+        </a>
+        <!-- Linux -->
+        <a class="tool" href="https://www.kernel.org/" target="_blank" title="Linux" aria-label="Linux">
+          <img alt="Linux logo" src="https://cdn.simpleicons.org/linux" />
+        </a>
       </div>
     </div>
 
@@ -269,7 +308,7 @@
         <li>CompTIA A+ (Active)</li>
         <li>CompTIA Network+ (In Progress)</li>
       </ul>
-      <p class="muted" style="margin-top:10px">© 2025 Ezekiel Correa • Background design inspired by modern portfolio layouts</p>
+      <p class="muted" style="margin-top:10px">© 2025 Ezekiel Correa • Brand icons via Simple Icons CDN</p>
     </div>
 
   </main>
@@ -286,6 +325,9 @@
         const id=link.getAttribute('data-tab');
         tabs.forEach(t=>t.classList.remove('active'));
         document.getElementById(id).classList.add('active');
+        // focus first heading for a11y
+        const firstH = document.getElementById(id).querySelector('h2, h1');
+        if(firstH) firstH.setAttribute('tabindex','-1'), firstH.focus();
       });
     });
 
