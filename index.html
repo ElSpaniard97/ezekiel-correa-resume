@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ezekiel Correa — Resume</title>
 
-<!-- 🔒 Security: Content Security Policy -->
+<!-- 🔒 Secure Content Security Policy (allows self + trusted CDNs) -->
 <meta http-equiv="Content-Security-Policy"
   content="default-src 'self';
            img-src 'self' https://cdn.simpleicons.org https://raw.githubusercontent.com data:;
            style-src 'self' 'unsafe-inline';
-           script-src 'self' https://kit.fontawesome.com;
+           script-src 'self' 'unsafe-inline' https://kit.fontawesome.com;
            font-src 'self' https://ka-f.fontawesome.com;
            object-src 'none';
            base-uri 'self';
@@ -93,7 +93,7 @@
     box-shadow:0 0 16px rgba(0,191,255,0.65);
   }
 
-  /* Neon pulse hex photo */
+  /* Neon hex photo */
   @keyframes neonPulse {
     0% {box-shadow:0 0 15px rgba(0,191,255,0.5),0 0 30px rgba(0,191,255,0.3),0 0 45px rgba(0,191,255,0.2);border-color:#00bfff;}
     50% {box-shadow:0 0 35px rgba(0,255,255,0.8),0 0 60px rgba(0,255,255,0.6),0 0 80px rgba(0,191,255,0.5);border-color:#00ffff;}
@@ -147,7 +147,6 @@
   }
 </style>
 
-<!-- FontAwesome (safe external source) -->
 <script src="https://kit.fontawesome.com/a2e0e6e6b0.js" crossorigin="anonymous"></script>
 </head>
 
@@ -274,15 +273,17 @@
   links.forEach(link=>{
     link.addEventListener('click',e=>{
       e.preventDefault();
+      const id=link.getAttribute('data-tab');
+      if(!id) return;
       links.forEach(l=>l.classList.remove('active'));
       link.classList.add('active');
-      const id=link.getAttribute('data-tab');
       tabs.forEach(t=>t.classList.remove('active'));
       document.getElementById(id).classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
     });
   });
 
-  // Dark/light toggle
+  // Light/dark toggle
   const modeBtn=document.getElementById('modeToggle');
   modeBtn.addEventListener('click',()=>{
     document.body.classList.toggle('light');
@@ -295,5 +296,26 @@
     modeBtn.textContent='🌞';
   }
 
-  // Safe print button (no inline JS)
-  document.getElementById
+  // Download CV (safe print)
+  const downloadBtn=document.getElementById('downloadCV');
+  if(downloadBtn){
+    downloadBtn.addEventListener('click',e=>{
+      e.preventDefault();
+      window.print();
+    });
+  }
+
+  // Logo fallback
+  document.querySelectorAll('.tool img').forEach(img=>{
+    img.onerror=()=>{
+      const parent=img.parentElement;
+      parent.removeChild(img);
+      const text=document.createElement('span');
+      text.textContent=parent.dataset.name;
+      parent.appendChild(text);
+    };
+  });
+})();
+</script>
+</body>
+</html>
