@@ -20,7 +20,7 @@
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
 
-  /* Top navigation (no title text) */
+  /* Top navigation */
   .topbar{
     position:sticky;top:0;z-index:1000;
     background:linear-gradient(to right, rgba(15,23,42,.92), rgba(2,6,23,.85));
@@ -84,9 +84,25 @@
   .btn:hover{filter:saturate(110%) brightness(1.05)}
   .btn[disabled]{opacity:.35;pointer-events:none}
 
-  /* Contact row on first page only */
+  /* Contact row */
   .contact{margin-top:8px;color:#e5e7eb;opacity:.9}
   .cta{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:10px;background:var(--accent-2);color:#fff;font-weight:800}
+
+  /* Intro with photo */
+  .intro {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .headshot {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  }
 
   /* Simple fade transition */
   .fade{animation:fade .6s ease both}
@@ -100,6 +116,14 @@
   @media (max-width:560px){
     h1{font-size:1.8rem}
     .panel{padding:18px 16px}
+    .headshot {
+      width: 80px;
+      height: 80px;
+    }
+    .intro {
+      justify-content: center;
+      text-align: center;
+    }
   }
 </style>
 </head>
@@ -122,9 +146,14 @@
     <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1920&auto=format&fit=crop');"></div>
     <div class="overlay"></div>
     <div class="panel fade">
-      <h1>Ezekiel Correa</h1>
-      <p class="muted">IT Support • IT Asset Management • Systems Troubleshooting • AI Projects</p>
-      <p class="contact">Rockdale, TX • (254) 317‑9258 • <a href="mailto:saints.correa23@gmail.com">saints.correa23@gmail.com</a></p>
+      <div class="intro">
+        <img class="headshot" src="2986ED64-9F11-46B7-ACAF-379171DE8CB3.jpeg" alt="Ezekiel Correa photo">
+        <div>
+          <h1>Ezekiel Correa</h1>
+          <p class="muted">IT Support • IT Asset Management • Systems Troubleshooting • AI Projects</p>
+        </div>
+      </div>
+      <p class="contact">Rockdale, TX • (254) 317-9258 • <a href="mailto:saints.correa23@gmail.com">saints.correa23@gmail.com</a></p>
       <a class="cta" href="#" onclick="window.print()">Download as PDF</a>
       <hr style="border:none;border-top:1px solid var(--rule);margin:14px 0">
       <h2>Professional Summary</h2>
@@ -273,7 +302,6 @@
       if(next){ e.preventDefault(); goTo(next); }
       if(prev){ e.preventDefault(); goTo(prev); }
     });
-    // On load, if hash exists, scroll there
     window.addEventListener('load', () => {
       if(location.hash){
         setTimeout(()=>goTo(location.hash), 100);
