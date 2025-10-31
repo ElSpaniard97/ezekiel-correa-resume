@@ -15,7 +15,7 @@
     });
   });
 
-  // Light/dark toggle
+  // Dark/light mode toggle
   const modeBtn = document.getElementById('modeToggle');
   modeBtn.addEventListener('click', () => {
     document.body.classList.toggle('light');
@@ -23,21 +23,14 @@
     modeBtn.textContent = isLight ? '🌞' : '🌙';
     localStorage.setItem('resume-mode', isLight ? 'light' : 'dark');
   });
+
+  // Load saved theme preference
   if (localStorage.getItem('resume-mode') === 'light') {
     document.body.classList.add('light');
     modeBtn.textContent = '🌞';
   }
 
-  // Download CV (safe print)
-  const downloadBtn = document.getElementById('downloadCV');
-  if (downloadBtn) {
-    downloadBtn.addEventListener('click', e => {
-      e.preventDefault();
-      window.print();
-    });
-  }
-
-  // Logo fallback
+  // Logo fallback (replace missing icons with text)
   document.querySelectorAll('.tool img').forEach(img => {
     img.onerror = () => {
       const parent = img.parentElement;
