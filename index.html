@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ezekiel Correa — Resume</title>
 
-<!-- Secure but GitHub Pages compatible CSP -->
 <meta http-equiv="Content-Security-Policy"
   content="default-src 'self';
            img-src 'self' https://cdn.simpleicons.org https://raw.githubusercontent.com data:;
@@ -77,19 +76,19 @@
   .hero h2{font-size:1.3rem;font-weight:600;color:var(--accent)}
   .hero p{color:var(--muted);max-width:540px;line-height:1.7}
 
-  /* Social bubbles */
+  /* Socials */
   .socials{display:flex;gap:12px;margin-top:25px}
   .socials a{
     width:44px;height:44px;border-radius:50%;background:rgba(0,191,255,0.15);
     display:flex;align-items:center;justify-content:center;color:var(--accent);
-    font-size:1.4rem;transition:all .25s ease;box-shadow:0 0 0 rgba(0,191,255,0);
+    font-size:1.4rem;transition:all .25s ease;
   }
   .socials a:hover{
     background:var(--accent);color:#fff;transform:scale(1.08);
     box-shadow:0 0 16px rgba(0,191,255,0.65);
   }
 
-  /* Neon hex photo */
+  /* Neon photo */
   @keyframes neonPulse {
     0% {box-shadow:0 0 15px rgba(0,191,255,0.5),0 0 30px rgba(0,191,255,0.3);border-color:#00bfff;}
     50% {box-shadow:0 0 40px rgba(0,255,255,0.8),0 0 70px rgba(0,255,255,0.6);border-color:#00ffff;}
@@ -107,7 +106,7 @@
   hr{border:none;border-top:1px solid var(--rule);margin:20px 0}
   @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-  /* Tools */
+  /* Tools grid */
   .tools-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
@@ -129,6 +128,17 @@
   }
   .tool img{width:48px;height:48px;object-fit:contain}
 
+  .edu-card{
+    background:rgba(255,255,255,0.02);
+    border:1px solid var(--rule);
+    border-radius:14px;
+    padding:20px;
+    margin-top:30px;
+    text-align:center;
+  }
+  .edu-card strong{color:var(--accent)}
+  .edu-card p{color:var(--muted);margin-top:6px;font-size:0.95rem}
+
   @media(max-width:768px){
     .hero{flex-direction:column;text-align:center}
     .photo-frame{width:220px;height:260px}
@@ -146,8 +156,7 @@
     <a href="#" data-tab="summary" class="active">Home</a>
     <a href="#" data-tab="experience">Experience</a>
     <a href="#" data-tab="ai">AI</a>
-    <a href="#" data-tab="tools">Tools</a>
-    <a href="#" data-tab="education">Education</a>
+    <a href="#" data-tab="tools-edu">Tools & Education</a>
     <a href="#" data-tab="certs">Certs</a>
     <button class="mode-btn" id="modeToggle">🌙</button>
   </div>
@@ -223,9 +232,9 @@
     <p><strong>Technical Tools Used:</strong> Python, Grok, OpenAI API, Streamlit, FastAPI, JSON, RESTful APIs</p>
   </div>
 
-  <!-- TOOLS -->
-  <div class="tab-content" id="tools">
-    <h2>Software & Tools</h2>
+  <!-- TOOLS & EDUCATION -->
+  <div class="tab-content" id="tools-edu">
+    <h2>Tools & Education</h2>
     <div class="tools-grid">
       <a class="tool" data-name="Jira" href="https://www.atlassian.com/software/jira" target="_blank"><img src="https://cdn.simpleicons.org/jira" alt="Jira"></a>
       <a class="tool" data-name="ServiceNow" href="https://www.servicenow.com/" target="_blank"><img src="https://cdn.simpleicons.org/servicenow" alt="ServiceNow"></a>
@@ -238,12 +247,11 @@
       <a class="tool" data-name="macOS" href="https://www.apple.com/macos/" target="_blank"><img src="https://cdn.simpleicons.org/apple" alt="macOS"></a>
       <a class="tool" data-name="Linux" href="https://www.kernel.org/" target="_blank"><img src="https://cdn.simpleicons.org/linux" alt="Linux"></a>
     </div>
-  </div>
-
-  <!-- EDUCATION -->
-  <div class="tab-content" id="education">
-    <h2>Education</h2>
-    <p><strong>Texas State Technical College</strong> — AAS, Computer Maintenance Technology (2019)</p>
+    <div class="edu-card">
+      <h3>Education</h3>
+      <strong>Texas State Technical College</strong>
+      <p>AAS, Computer Maintenance Technology (2019)</p>
+    </div>
   </div>
 
   <!-- CERTIFICATIONS -->
