@@ -17,90 +17,146 @@
            upgrade-insecure-requests;">
 
 <style>
-:root{
+:root {
   --bg:#0b1220;--panel:#0f172a;--ink:#e5e7eb;--muted:#94a3b8;
   --accent:#00bfff;--accent-2:#1e90ff;--rule:#1f2a44;
 }
-body.light{--bg:#f9fafb;--panel:#ffffff;--ink:#1e293b;--muted:#64748b;--accent:#2563eb;--accent-2:#1d4ed8;--rule:#cbd5e1;}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+body.light {
+  --bg:#f9fafb;--panel:#ffffff;--ink:#1e293b;--muted:#64748b;
+  --accent:#2563eb;--accent-2:#1d4ed8;--rule:#cbd5e1;
+}
+*{box-sizing:border-box;}
+html,body {
+  margin:0;padding:0;background:var(--bg);color:var(--ink);
   font:16px/1.6 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-  transition:background .5s,color .5s;}
-a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+  transition:background .5s,color .5s;
+}
+a{color:var(--accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
 
 /* NAVBAR */
-.topbar{
+.topbar {
   display:flex;justify-content:space-between;align-items:center;
-  padding:12px 24px;background:var(--panel);border-bottom:1px solid var(--rule);
-  position:sticky;top:0;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.25);
+  padding:12px 24px;background:var(--panel);
+  border-bottom:1px solid var(--rule);
+  position:sticky;top:0;z-index:1000;
+  box-shadow:0 2px 8px rgba(0,0,0,.25);
 }
-.logo{font-weight:700;font-size:1.3rem}
-.nav-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center;}
-.nav-links a{color:var(--ink);font-weight:600;transition:color .3s}
-.nav-links a:hover,.nav-links a.active{color:var(--accent)}
-.mode-btn{
-  background:var(--accent-2);border:none;color:#fff;width:40px;height:40px;
-  border-radius:50%;font-size:1.1rem;display:flex;align-items:center;justify-content:center;
+.logo {font-weight:700;font-size:1.3rem;}
+.nav-links {
+  display:flex;align-items:center;gap:20px;
+  flex-wrap:wrap;justify-content:center;
+}
+.nav-links a {
+  color:var(--ink);font-weight:600;transition:color .3s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);}
+.mode-btn {
+  background:var(--accent-2);border:none;color:#fff;
+  width:40px;height:40px;border-radius:50%;
+  font-size:1.1rem;display:flex;align-items:center;justify-content:center;
   cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.3);
 }
 
-/* Hamburger (mobile) */
-.hamburger{
+/* Hamburger menu */
+.hamburger {
   display:none;flex-direction:column;cursor:pointer;gap:5px;
   position:absolute;top:18px;right:24px;z-index:1100;
 }
-.hamburger div{width:26px;height:3px;background:var(--ink);border-radius:2px;transition:all .3s;}
-.nav-open .hamburger div:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
-.nav-open .hamburger div:nth-child(2){opacity:0;}
-.nav-open .hamburger div:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
-
-/* Mobile Nav Dropdown */
-.mobile-nav{
-  display:none;flex-direction:column;background:var(--panel);
-  position:absolute;top:64px;right:16px;padding:16px 20px;border:1px solid var(--rule);
-  border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,.4);
-  opacity:0;transform:translateY(-10px);transition:opacity .3s ease, transform .3s ease;
+.hamburger div {
+  width:26px;height:3px;background:var(--ink);
+  border-radius:2px;transition:all .3s;
 }
-.mobile-nav.show{display:flex;opacity:1;transform:translateY(0);}
-.mobile-nav a{margin:6px 0;color:var(--ink);font-weight:600;}
-.mobile-nav a:hover{color:var(--accent);}
-@media(max-width:768px){
-  .nav-links{display:none;}
-  .hamburger{display:flex;}
+.nav-open .hamburger div:nth-child(1){
+  transform:rotate(45deg) translate(5px,5px);
+}
+.nav-open .hamburger div:nth-child(2){opacity:0;}
+.nav-open .hamburger div:nth-child(3){
+  transform:rotate(-45deg) translate(5px,-5px);
+}
+
+/* Mobile dropdown */
+.mobile-nav {
+  display:none;flex-direction:column;
+  background:rgba(15,23,42,0.95);
+  position:absolute;top:64px;right:16px;
+  padding:16px 20px;border:1px solid var(--rule);
+  border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,.4);
+  opacity:0;transform:translateY(-10px);
+  transition:opacity .3s ease, transform .3s ease;
+}
+.mobile-nav.show {
+  display:flex;opacity:1;transform:translateY(0);
+}
+.mobile-nav a {
+  margin:6px 0;color:var(--ink);font-weight:600;
+}
+.mobile-nav a:hover {color:var(--accent);}
+@media (max-width:768px){
+  .nav-links {display:none;}
+  .hamburger {display:flex;}
 }
 
 /* Tabs */
-.tabs{display:flex;flex-direction:column;align-items:center;justify-content:center;
-  min-height:100vh;padding:40px 16px}
-.tab-content{display:none;max-width:950px;width:92vw;background:var(--panel);
-  border-radius:20px;padding:50px;box-shadow:0 10px 30px rgba(0,0,0,.25);
-  animation:fade .5s ease}
-.tab-content.active{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.tabs {
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;min-height:100vh;padding:40px 16px;
+}
+.tab-content {
+  display:none;max-width:950px;width:92vw;background:var(--panel);
+  border-radius:20px;padding:50px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+  animation:fade .5s ease;
+}
+.tab-content.active {display:block;}
+@keyframes fade {
+  from{opacity:0;transform:translateY(8px);}
+  to{opacity:1;transform:none;}
+}
 
-.hero{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px}
-.hero-text{flex:1 1 350px}
-.hero h1{font-size:2.5rem;margin:0 0 10px;color:#fff}
-.hero h2{font-size:1.3rem;font-weight:600;color:var(--accent)}
-.hero p{color:var(--muted);max-width:540px;line-height:1.7}
-.socials{display:flex;gap:12px;margin-top:25px}
-.socials a{width:44px;height:44px;border-radius:50%;background:rgba(0,191,255,0.15);
-  display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.4rem;
-  transition:all .25s ease;}
-.socials a:hover{background:var(--accent);color:#fff;transform:scale(1.08);
-  box-shadow:0 0 16px rgba(0,191,255,0.65);}
+/* Hero */
+.hero {display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;}
+.hero-text{flex:1 1 350px;}
+.hero h1{font-size:2.5rem;margin:0 0 10px;color:#fff;}
+.hero h2{font-size:1.3rem;font-weight:600;color:var(--accent);}
+.hero p{color:var(--muted);max-width:540px;line-height:1.7;}
+.socials{display:flex;gap:12px;margin-top:25px;}
+.socials a {
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(0,191,255,0.15);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent);font-size:1.4rem;
+  transition:all .25s ease;
+}
+.socials a:hover {
+  background:var(--accent);color:#fff;
+  transform:scale(1.08);box-shadow:0 0 16px rgba(0,191,255,0.65);
+}
 
 /* Neon photo */
-@keyframes neonPulse{0%{box-shadow:0 0 15px rgba(0,191,255,.5),0 0 30px rgba(0,191,255,.3);border-color:#00bfff;}
-50%{box-shadow:0 0 40px rgba(0,255,255,.8),0 0 70px rgba(0,255,255,.6);border-color:#00ffff;}
-100%{box-shadow:0 0 15px rgba(0,191,255,.5),0 0 30px rgba(0,191,255,.3);border-color:#00bfff;}}
-.photo-frame{width:260px;height:300px;clip-path:polygon(25% 6%,75% 6%,100% 50%,75% 94%,25% 94%,0% 50%);
-  display:flex;align-items:center;justify-content:center;border:2px solid var(--accent);
-  animation:neonPulse 3.5s ease-in-out infinite;}
-.photo-frame img{width:240px;height:280px;object-fit:cover;clip-path:inherit;border-radius:10px;}
+@keyframes neonPulse{
+  0%{box-shadow:0 0 15px rgba(0,191,255,.5),0 0 30px rgba(0,191,255,.3);border-color:#00bfff;}
+  50%{box-shadow:0 0 40px rgba(0,255,255,.8),0 0 70px rgba(0,255,255,.6);border-color:#00ffff;}
+  100%{box-shadow:0 0 15px rgba(0,191,255,.5),0 0 30px rgba(0,191,255,.3);border-color:#00bfff;}
+}
+.photo-frame {
+  width:260px;height:300px;
+  clip-path:polygon(25% 6%,75% 6%,100% 50%,75% 94%,25% 94%,0% 50%);
+  display:flex;align-items:center;justify-content:center;
+  border:2px solid var(--accent);
+  animation:neonPulse 3.5s ease-in-out infinite;
+}
+.photo-frame img {
+  width:240px;height:280px;object-fit:cover;
+  clip-path:inherit;border-radius:10px;
+}
 
-.muted{color:var(--muted)}
-.project code{background:rgba(255,255,255,0.05);padding:2px 6px;border-radius:6px;color:var(--accent);font-weight:600;}
+.muted{color:var(--muted);}
+.project code{
+  background:rgba(255,255,255,0.05);
+  padding:2px 6px;border-radius:6px;
+  color:var(--accent);font-weight:600;
+}
 </style>
 <script src="https://kit.fontawesome.com/a2e0e6e6b0.js" crossorigin="anonymous"></script>
 </head>
@@ -108,6 +164,7 @@ a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
 <body>
 <header class="topbar">
   <div class="logo">Ezekiel Correa</div>
+
   <div class="nav-links">
     <a href="#" data-tab="summary" class="active">Home</a>
     <a href="#" data-tab="experience">Experience</a>
@@ -117,9 +174,11 @@ a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
     <a href="#" data-tab="certs">Certs</a>
     <button class="mode-btn" id="modeToggle">🌙</button>
   </div>
+
   <div class="hamburger" id="hamburger">
     <div></div><div></div><div></div>
   </div>
+
   <div class="mobile-nav" id="mobileNav">
     <a href="#" data-tab="summary">Home</a>
     <a href="#" data-tab="experience">Experience</a>
@@ -152,86 +211,39 @@ a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
     </div>
   </div>
 
-  <!-- EXPERIENCE -->
-  <div class="tab-content" id="experience">
-    <h2>Experience</h2>
-    <h3>Senior IT Asset Manager — EOS IT Solutions</h3>
-    <p class="muted">Pflugerville, TX • Jun 2025 – Present</p>
-    <ul><li>Oversee IT asset lifecycle ensuring compliance and optimization.</li>
-      <li>Automate Jira asset tracking for audits and reporting.</li>
-      <li>Lead audits, mentor technicians, and manage vendor coordination.</li></ul>
-  </div>
-
-  <!-- AI -->
-  <div class="tab-content" id="ai">
-    <h2>AI Projects</h2>
-    <ul>
-      <li>Developed <strong>LLM-powered Helpdesk Agents</strong> for automated troubleshooting and configuration.</li>
-      <li>Integrated AI APIs with Python automation for real-time diagnostics.</li>
-      <li>Built conversational AI for IT workflows using Grok and OpenAI APIs.</li>
-    </ul>
-  </div>
-
-  <!-- TOOLS & EDUCATION -->
-  <div class="tab-content" id="tools-edu">
-    <h2>Tools & Education</h2>
-    <div class="tools-grid">
-      <a class="tool"><img src="https://cdn.simpleicons.org/jira"></a>
-      <a class="tool"><img src="https://cdn.simpleicons.org/python"></a>
-      <a class="tool"><img src="https://cdn.simpleicons.org/cisco"></a>
-      <a class="tool"><img src="https://cdn.simpleicons.org/github"></a>
-      <a class="tool"><img src="https://cdn.simpleicons.org/linux"></a>
-      <a class="tool"><img src="https://cdn.simpleicons.org/microsoftoffice"></a>
-      <a class="tool"><img src="https://cdn.simpleicons.org/apple"></a>
-    </div>
-    <div class="edu-card">
-      <h3>Education</h3>
-      <strong>Texas State Technical College</strong>
-      <p>AAS – Computer Maintenance Technology (2019)</p>
-    </div>
-  </div>
-
-  <!-- PROJECTS -->
+  <!-- PROJECTS (simplified for test) -->
   <div class="tab-content" id="projects">
     <h2>Projects</h2>
     <p class="muted">A showcase of my IT, AI, and UX portfolio work.</p>
     <div class="projects-grid">
       <div class="project">
         <h3>Security+ Flashcards Dashboard</h3>
-        <p>Interactive study dashboard with flashcard flipping, review tracking, and chapter-based filtering.<br><br>
+        <p>Interactive study dashboard.<br><br>
         <strong>Login Info:</strong> Name — <code>Guest</code> | Password — <code>1234</code></p>
         <a href="https://elspaniard97.github.io/securityplus-dashboard/flashcards.html" target="_blank">View Project →</a>
       </div>
       <div class="project">
         <h3>HC IT Pros — Company Website</h3>
-        <p>Professional IT service platform offering remote troubleshooting, asset management, and web design solutions. Built with responsive HTML, CSS, and AI-assisted automation integration.</p>
+        <p>Professional IT service platform offering remote troubleshooting, asset management, and web design solutions.</p>
         <a href="https://elspaniard97.github.io/hc-it-pros/" target="_blank">View Project →</a>
       </div>
     </div>
-  </div>
-
-  <!-- CERTIFICATIONS -->
-  <div class="tab-content" id="certs">
-    <h2>Certifications</h2>
-    <ul>
-      <li>CompTIA A+ (Active)</li>
-      <li><strong>CompTIA Network+ (Certified – Oct 2025)</strong></li>
-    </ul>
-    <p class="muted" style="margin-top:10px">© 2025 Ezekiel Correa • Icons via Simple Icons CDN</p>
   </div>
 </main>
 
 <script src="script.js"></script>
 <script>
-/* Hamburger menu toggle */
-const hamburger=document.getElementById('hamburger');
-const mobileNav=document.getElementById('mobileNav');
-hamburger.addEventListener('click',()=>{
+/* Mobile Hamburger Toggle */
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+
+hamburger.addEventListener('click', () => {
   document.body.classList.toggle('nav-open');
   mobileNav.classList.toggle('show');
 });
-mobileNav.querySelectorAll('a').forEach(a=>{
-  a.addEventListener('click',()=>{
+
+mobileNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
     mobileNav.classList.remove('show');
     document.body.classList.remove('nav-open');
   });
