@@ -1,22 +1,19 @@
 (() => {
   const desktopNav = document.getElementById('desktopNav');
-  const mobileNav = document.getElementById('mobileNav');
-  const hamburger = document.getElementById('hamburger');
   const modeBtn = document.getElementById('modeToggle');
   const tabs = document.querySelectorAll('.tab-content');
 
+  // --- Tab Navigation ---
   function activateTab(id) {
-    tabs.forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('[data-tab]').forEach(a => a.classList.remove('active'));
+    tabs.forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('[data-tab]').forEach(link => link.classList.remove('active'));
 
-    const tab = document.getElementById(id);
-    if (tab) tab.classList.add('active');
+    const target = document.getElementById(id);
+    if (target) target.classList.add('active');
 
-    document.querySelectorAll(`[data-tab="${id}"]`).forEach(a => a.classList.add('active'));
+    document.querySelectorAll(`[data-tab="${id}"]`).forEach(link => link.classList.add('active'));
 
     if (history.replaceState) history.replaceState(null, '', `#${id}`);
-    mobileNav.classList.remove('show');
-    document.body.classList.remove('nav-open');
   }
 
   function handleNavClick(e) {
@@ -26,19 +23,11 @@
     activateTab(link.dataset.tab);
   }
 
-  desktopNav.addEventListener('click', handleNavClick);
-  mobileNav.addEventListener('click', handleNavClick);
-
-  if (hamburger && mobileNav) {
-    hamburger.addEventListener('click', () => {
-      const show = !mobileNav.classList.contains('show');
-      mobileNav.classList.toggle('show', show);
-      document.body.classList.toggle('nav-open', show);
-      hamburger.setAttribute('aria-expanded', show);
-    });
+  if (desktopNav) {
+    desktopNav.addEventListener('click', handleNavClick);
   }
 
-  // Dark/Light mode toggle
+  // --- Dark/Light Mode Toggle ---
   if (modeBtn) {
     modeBtn.addEventListener('click', () => {
       document.body.classList.toggle('light');
@@ -47,13 +36,27 @@
       localStorage.setItem('resume-theme', isLight ? 'light' : 'dark');
     });
 
+    // Restore saved theme
     if (localStorage.getItem('resume-theme') === 'light') {
       document.body.classList.add('light');
       modeBtn.textContent = '🌞';
     }
   }
 
-  // Initialize
+  // --- Replace Broken Tool Logos with Text ---
+  document.querySelectorAll('.tool img').forEach(img => {
+    img.onerror = () => {
+      const parent = img.parentElement;
+      if (parent) {
+        img.remove();
+        const text = document.createElement('span');
+        text.textContent = parent.getAttribute('data-name') || 'Tool';
+        parent.appendChild(text);
+      }
+    };
+  });
+
+  // --- Load Tab Based on URL Hash ---
   window.addEventListener('DOMContentLoaded', () => {
     const id = (location.hash || '#summary').replace('#', '');
     const exists = document.getElementById(id);
