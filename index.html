@@ -38,7 +38,9 @@
     --rule:#cbd5e1;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;transition:background .5s,color .5s;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font:16px/1.6 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    transition:background .5s,color .5s;}
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
 
@@ -59,9 +61,11 @@
   }
 
   /* Tabs */
-  .tabs{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:40px 16px}
-  .tab-content{display:none;max-width:950px;width:92vw;background:var(--panel);border-radius:20px;padding:50px;
-    box-shadow:0 10px 30px rgba(0,0,0,.25);animation:fade .5s ease}
+  .tabs{display:flex;flex-direction:column;align-items:center;justify-content:center;
+    min-height:100vh;padding:40px 16px}
+  .tab-content{display:none;max-width:950px;width:92vw;background:var(--panel);
+    border-radius:20px;padding:50px;box-shadow:0 10px 30px rgba(0,0,0,.25);
+    animation:fade .5s ease}
   .tab-content.active{display:block}
 
   /* Hero */
@@ -78,7 +82,8 @@
     display:flex;align-items:center;justify-content:center;color:var(--accent);
     font-size:1.4rem;transition:all .25s ease;
   }
-  .socials a:hover{background:var(--accent);color:#fff;transform:scale(1.08);box-shadow:0 0 16px rgba(0,191,255,0.65);}
+  .socials a:hover{background:var(--accent);color:#fff;transform:scale(1.08);
+    box-shadow:0 0 16px rgba(0,191,255,0.65);}
 
   /* Neon photo */
   @keyframes neonPulse {
@@ -100,38 +105,38 @@
 
   /* Tools grid */
   .tools-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
     gap:22px;align-items:center;justify-items:center;
   }
-  .tool{background:rgba(255,255,255,0.02);border:1px solid var(--rule);border-radius:14px;padding:16px;display:flex;align-items:center;justify-content:center;transition:transform .2s ease,box-shadow .2s ease,background .2s ease;color:var(--ink);font-weight:600;font-size:.9rem;text-align:center;}
-  .tool:hover{transform:translateY(-3px);background:rgba(0,191,255,0.06);box-shadow:0 0 15px rgba(0,191,255,0.25),0 0 25px rgba(0,191,255,0.2);}
+  .tool{background:rgba(255,255,255,0.02);border:1px solid var(--rule);
+    border-radius:14px;padding:16px;display:flex;align-items:center;justify-content:center;
+    transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+    color:var(--ink);font-weight:600;font-size:.9rem;text-align:center;}
+  .tool:hover{transform:translateY(-3px);background:rgba(0,191,255,0.06);
+    box-shadow:0 0 15px rgba(0,191,255,0.25),0 0 25px rgba(0,191,255,0.2);}
   .tool img{width:48px;height:48px;object-fit:contain}
 
-  .edu-card{background:rgba(255,255,255,0.02);border:1px solid var(--rule);border-radius:14px;padding:20px;margin-top:30px;text-align:center;}
+  .edu-card{background:rgba(255,255,255,0.02);border:1px solid var(--rule);
+    border-radius:14px;padding:20px;margin-top:30px;text-align:center;}
   .edu-card strong{color:var(--accent)}
   .edu-card p{color:var(--muted);margin-top:6px;font-size:0.95rem}
 
   /* Projects */
-  .projects-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:24px;margin-top:20px;
-  }
-  .project{
-    background:rgba(255,255,255,0.03);
-    border:1px solid var(--rule);
-    border-radius:16px;
-    padding:22px;
-    transition:transform .25s ease, box-shadow .25s ease;
-  }
-  .project:hover{
-    transform:translateY(-4px);
-    box-shadow:0 0 18px rgba(0,191,255,0.3);
-  }
+  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:24px;margin-top:20px;}
+  .project{background:rgba(255,255,255,0.03);border:1px solid var(--rule);
+    border-radius:16px;padding:22px;transition:transform .25s ease, box-shadow .25s ease;}
+  .project:hover{transform:translateY(-4px);box-shadow:0 0 18px rgba(0,191,255,0.3);}
   .project h3{margin:0 0 10px;color:var(--accent)}
   .project p{color:var(--muted);font-size:.95rem;margin-bottom:14px;}
   .project a{color:var(--accent-2);font-weight:600;}
+  .project code{
+    background:rgba(255,255,255,0.05);
+    padding:2px 6px;
+    border-radius:6px;
+    color:var(--accent);
+    font-weight:600;
+  }
 
   @media(max-width:768px){
     .hero{flex-direction:column;text-align:center}
@@ -164,7 +169,12 @@
       <div class="hero-text">
         <h1>Hello, I'm<br><strong>Ezekiel Correa</strong></h1>
         <h2>IT Support • Network Administration • AI Automation Specialist</h2>
-        <p>Certified IT professional with hands-on expertise in <strong>network infrastructure</strong>, <strong>system troubleshooting</strong>, and <strong>AI-driven automation</strong>. Experienced in managing large-scale hardware lifecycles and implementing intelligent tools to streamline IT workflows.<br><br><strong>CompTIA Network+</strong> certified (Oct 2025), skilled in routing, switching, and network security. Passionate about integrating <strong>AI systems</strong> to enhance operational efficiency.</p>
+        <p>Certified IT professional with hands-on expertise in <strong>network infrastructure</strong>,
+        <strong>system troubleshooting</strong>, and <strong>AI-driven automation</strong>.
+        Experienced in managing large-scale hardware lifecycles and implementing intelligent tools
+        to streamline IT workflows.<br><br><strong>CompTIA Network+</strong> certified (Oct 2025),
+        skilled in routing, switching, and network security. Passionate about integrating
+        <strong>AI systems</strong> to enhance operational efficiency.</p>
         <div class="socials">
           <a href="https://github.com/ElSpaniard97" target="_blank"><i class="fab fa-github"></i></a>
           <a href="https://www.linkedin.com/in/ezekiel-correa-117a50305" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -181,8 +191,11 @@
     <h2>Experience</h2>
     <h3>Senior IT Asset Manager — EOS IT Solutions</h3>
     <p class="muted">Pflugerville, TX • Jun 2025 – Present</p>
-    <ul><li>Oversee full lifecycle of IT assets ensuring compliance and optimization.</li><li>Configure Jira for automated asset tracking and reporting.</li><li>Lead audits, mentor technicians, and coordinate with vendors.</li></ul>
-    <hr><h3>Tech Support — A3 Staffing Solutions</h3><p class="muted">Temple, TX • Apr 2025 – Present</p><ul><li>Perform hospital hardware/software refresh under HIPAA compliance.</li><li>Install Windows and applications, assist users, and log all deployments.</li></ul>
+    <ul><li>Oversee IT asset lifecycle ensuring compliance and optimization.</li><li>Automate asset tracking in Jira for reporting.</li><li>Lead audits, mentor technicians, and manage vendor coordination.</li></ul>
+    <hr>
+    <h3>Tech Support — A3 Staffing Solutions</h3>
+    <p class="muted">Temple, TX • Apr 2025 – Present</p>
+    <ul><li>Perform hospital hardware/software refresh under HIPAA compliance.</li><li>Install Windows apps, assist users, and log deployments.</li></ul>
   </div>
 
   <!-- AI -->
@@ -199,13 +212,13 @@
   <div class="tab-content" id="tools-edu">
     <h2>Tools & Education</h2>
     <div class="tools-grid">
-      <a class="tool" data-name="Jira"><img src="https://cdn.simpleicons.org/jira"></a>
-      <a class="tool" data-name="Python"><img src="https://cdn.simpleicons.org/python"></a>
-      <a class="tool" data-name="Cisco"><img src="https://cdn.simpleicons.org/cisco"></a>
-      <a class="tool" data-name="GitHub"><img src="https://cdn.simpleicons.org/github"></a>
-      <a class="tool" data-name="Linux"><img src="https://cdn.simpleicons.org/linux"></a>
-      <a class="tool" data-name="Microsoft 365"><img src="https://cdn.simpleicons.org/microsoftoffice"></a>
-      <a class="tool" data-name="macOS"><img src="https://cdn.simpleicons.org/apple"></a>
+      <a class="tool"><img src="https://cdn.simpleicons.org/jira"></a>
+      <a class="tool"><img src="https://cdn.simpleicons.org/python"></a>
+      <a class="tool"><img src="https://cdn.simpleicons.org/cisco"></a>
+      <a class="tool"><img src="https://cdn.simpleicons.org/github"></a>
+      <a class="tool"><img src="https://cdn.simpleicons.org/linux"></a>
+      <a class="tool"><img src="https://cdn.simpleicons.org/microsoftoffice"></a>
+      <a class="tool"><img src="https://cdn.simpleicons.org/apple"></a>
     </div>
     <div class="edu-card">
       <h3>Education</h3>
@@ -221,7 +234,11 @@
     <div class="projects-grid">
       <div class="project">
         <h3>Security+ Flashcards Dashboard</h3>
-        <p>An interactive study app built with modular JavaScript for user login, flashcard review tracking, and dynamic data loading. Login: Guest Password: 1234</p>
+        <p>
+          Interactive study dashboard with flashcard flipping, review tracking, and chapter-based filtering.
+          <br><br>
+          <strong>Login Info:</strong> Name — <code>Guest</code> | Password — <code>1234</code>
+        </p>
         <a href="https://elspaniard97.github.io/securityplus-dashboard/flashcards.html" target="_blank">View Project →</a>
       </div>
     </div>
