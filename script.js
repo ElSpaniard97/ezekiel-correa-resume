@@ -23,9 +23,7 @@
     activateTab(link.dataset.tab);
   }
 
-  if (desktopNav) {
-    desktopNav.addEventListener('click', handleNavClick);
-  }
+  if (desktopNav) desktopNav.addEventListener('click', handleNavClick);
 
   // --- Dark/Light Mode Toggle ---
   if (modeBtn) {
@@ -42,19 +40,6 @@
       modeBtn.textContent = '🌞';
     }
   }
-
-  // --- Replace Broken Tool Logos with Text ---
-  document.querySelectorAll('.tool img').forEach(img => {
-    img.onerror = () => {
-      const parent = img.parentElement;
-      if (parent) {
-        img.remove();
-        const text = document.createElement('span');
-        text.textContent = parent.getAttribute('data-name') || 'Tool';
-        parent.appendChild(text);
-      }
-    };
-  });
 
   // --- Load Tab Based on URL Hash ---
   window.addEventListener('DOMContentLoaded', () => {
