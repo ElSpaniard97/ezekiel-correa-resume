@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ezekiel Correa — Resume</title>
+<title>Ezekiel Correa — Network Engineer</title>
 
 <meta http-equiv="Content-Security-Policy"
   content="default-src 'self';
@@ -16,7 +16,7 @@
            frame-ancestors 'none';
            upgrade-insecure-requests;">
 
-<meta name="description" content="Portfolio resume for Ezekiel Correa — Network+ Certified IT Professional specializing in Network Administration, AI Automation, and Systems Support.">
+<meta name="description" content="Ezekiel Correa — Network Engineer with expertise in IT Asset Management, Systems Support, and Infrastructure Automation.">
 
 <style>
   :root{
@@ -65,17 +65,6 @@
   .hero h2{font-size:1.3rem;font-weight:600;color:var(--accent)}
   .hero p{color:var(--muted);max-width:640px;line-height:1.7}
 
-  /* Socials */
-  .contact{margin:10px 0 0;color:var(--ink)}
-  .socials{display:flex;gap:12px;margin-top:12px}
-  .socials a{
-    width:44px;height:44px;border-radius:50%;background:rgba(0,191,255,0.15);
-    display:flex;align-items:center;justify-content:center;color:var(--accent);
-    font-size:1.4rem;transition:all .25s ease;
-  }
-  .socials a:hover{background:var(--accent);color:#fff;transform:scale(1.08);
-    box-shadow:0 0 16px rgba(0,191,255,0.65);}
-
   /* Neon photo */
   @keyframes neonPulse {
     0% {box-shadow:0 0 15px rgba(0,191,255,0.5),0 0 30px rgba(0,191,255,0.3);border-color:#00bfff;}
@@ -94,26 +83,12 @@
   hr{border:none;border-top:1px solid var(--rule);margin:20px 0}
   @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-  /* Tools grid */
-  .tools-grid{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
-    gap:22px;align-items:center;justify-items:center;
-  }
-  .tool{background:rgba(255,255,255,0.02);border:1px solid var(--rule);
-    border-radius:14px;padding:16px;display:flex;align-items:center;justify-content:center;
-    transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
-    color:var(--ink);font-weight:600;font-size:.9rem;text-align:center;}
-  .tool:hover{transform:translateY(-3px);background:rgba(0,191,255,0.06);
-    box-shadow:0 0 15px rgba(0,191,255,0.25),0 0 25px rgba(0,191,255,0.2);}
-  .tool img{width:48px;height:48px;object-fit:contain}
-
   .edu-card{background:rgba(255,255,255,0.02);border:1px solid var(--rule);
     border-radius:14px;padding:20px;margin-top:30px;}
   .badge{display:inline-flex;align-items:center;gap:8px;margin:6px 10px 0 0;
     padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);border:1px solid var(--rule);font-weight:600}
   .badge img{width:20px;height:20px;object-fit:contain}
 
-  /* Projects */
   .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:24px;margin-top:20px;}
   .project{background:rgba(255,255,255,0.03);border:1px solid var(--rule);
@@ -140,10 +115,8 @@
   <div class="nav-links" id="desktopNav">
     <a href="#" data-tab="summary" class="active">Home</a>
     <a href="#" data-tab="experience">Experience</a>
-    <a href="#" data-tab="tools">Tools</a>
     <a href="#" data-tab="education">Education</a>
     <a href="#" data-tab="projects">Projects</a>
-    <a href="#" data-tab="languages">Languages</a>
     <button class="mode-btn" id="modeToggle">🌙</button>
   </div>
 </header>
@@ -154,18 +127,9 @@
     <div class="hero">
       <div class="hero-text">
         <h1>Ezekiel Correa</h1>
-        <h2>Network+ Certified • IT Asset Management • Systems Support • AI Automation</h2>
-
-        <p class="contact">
-          Rockdale, TX • (254) 317-9258 •
-          <a href="mailto:ezekielcorrea2016@gmail.com">ezekielcorrea2016@gmail.com</a><br>
-          <a href="https://github.com/ElSpaniard97" target="_blank">GitHub Resume</a> •
-          <a href="https://www.linkedin.com/in/ezekiel-correa-117a50305" target="_blank">LinkedIn</a><br>
-          <span class="muted">Certifications:</span> CompTIA A+ | CompTIA Network+ | AI Proficient | Bilingual (English / Spanish)
-        </p>
+        <h2>Network Engineer</h2>
 
         <hr>
-
         <p>
           Motivated and analytical IT professional with <strong>6+ years</strong> of experience in IT asset management,
           technical support, and systems troubleshooting across enterprise environments. Demonstrated success managing full
@@ -177,11 +141,9 @@
           toward system administration and infrastructure engineering roles. Recognized for strong communication, adaptability,
           and a customer-first approach to IT service delivery.
         </p>
-
-        <div class="socials">
-          <a href="https://github.com/ElSpaniard97" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/ezekiel-correa-117a50305" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        </div>
+        <p class="muted">
+          Rockdale, TX • (254) 317-9258 • <a href="mailto:ezekielcorrea2016@gmail.com">ezekielcorrea2016@gmail.com</a>
+        </p>
       </div>
 
       <div class="photo-frame">
@@ -251,39 +213,6 @@
     </ul>
   </div>
 
-  <!-- TOOLS -->
-  <div class="tab-content" id="tools">
-    <h2>Technical Skills</h2>
-
-    <h3 class="muted" style="margin-top:0">Platforms</h3>
-    <div class="tools-grid" style="margin-bottom:16px">
-      <span class="tool" data-name="Windows"><img src="https://cdn.simpleicons.org/windows" alt="Windows"></span>
-      <span class="tool" data-name="macOS"><img src="https://cdn.simpleicons.org/apple" alt="macOS"></span>
-      <span class="tool" data-name="Linux"><img src="https://cdn.simpleicons.org/linux" alt="Linux"></span>
-    </div>
-
-    <h3 class="muted">Tools</h3>
-    <div class="tools-grid" style="margin-bottom:16px">
-      <span class="tool" data-name="Jira"><img src="https://cdn.simpleicons.org/jira" alt="Jira"></span>
-      <span class="tool" data-name="ServiceNow"><img src="https://cdn.simpleicons.org/servicenow" alt="ServiceNow"></span>
-      <span class="tool" data-name="Asset Panda"><img src="https://cdn.simpleicons.org/assetpanda" alt="Asset Panda"></span>
-      <span class="tool" data-name="GitHub"><img src="https://cdn.simpleicons.org/github" alt="GitHub"></span>
-      <span class="tool" data-name="PowerShell"><img src="https://cdn.simpleicons.org/powershell" alt="PowerShell"></span>
-      <span class="tool" data-name="Python"><img src="https://cdn.simpleicons.org/python" alt="Python"></span>
-      <span class="tool" data-name="MobaXterm"><img src="https://cdn.simpleicons.org/mobaxterm" alt="MobaXterm"></span>
-      <span class="tool" data-name="Cisco CLI"><img src="https://cdn.simpleicons.org/cisco" alt="Cisco"></span>
-    </div>
-
-    <h3 class="muted">Specialties</h3>
-    <ul>
-      <li>IT Asset Management (ITAM)</li>
-      <li>AI Automation Scripts</li>
-      <li>Network Troubleshooting</li>
-      <li>End-User Support</li>
-      <li>System Deployment & Configuration</li>
-    </ul>
-  </div>
-
   <!-- EDUCATION -->
   <div class="tab-content" id="education">
     <h2>Education</h2>
@@ -305,7 +234,7 @@
     </div>
   </div>
 
-  <!-- PROJECTS (unchanged as requested) -->
+  <!-- PROJECTS -->
   <div class="tab-content" id="projects">
     <h2>Projects</h2>
     <p class="muted">A showcase of my ongoing IT, AI, and UX portfolio work.</p>
@@ -328,16 +257,6 @@
         <a href="https://elspaniard97.github.io/hc-it-pros/" target="_blank" rel="noopener">View Project →</a>
       </div>
     </div>
-  </div>
-
-  <!-- LANGUAGES -->
-  <div class="tab-content" id="languages">
-    <h2>Languages</h2>
-    <ul>
-      <li>English — Fluent</li>
-      <li>Spanish — Fluent</li>
-    </ul>
-    <p class="muted" style="margin-top:10px">© 2025 Ezekiel Correa • Icons via Simple Icons CDN</p>
   </div>
 </main>
 
