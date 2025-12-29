@@ -41,6 +41,18 @@
     }
   }
 
+  // --- PDF Preview Toggle (CSP-safe: no inline handlers) ---
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-toggle]');
+    if (!btn) return;
+
+    const targetId = btn.getAttribute('data-toggle');
+    const panel = document.getElementById(targetId);
+    if (!panel) return;
+
+    panel.classList.toggle('active');
+  });
+
   // --- Load Tab Based on URL Hash ---
   window.addEventListener('DOMContentLoaded', () => {
     const id = (location.hash || '#summary').replace('#', '');
