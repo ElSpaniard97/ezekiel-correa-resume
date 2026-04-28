@@ -1,0 +1,28 @@
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+auth.json
+secrets/
+config.local.*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Build artifacts (none expected, but defense-in-depth)
+node_modules/
+dist/
+build/
+.cache/
