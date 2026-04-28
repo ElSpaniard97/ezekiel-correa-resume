@@ -5,8 +5,7 @@ This repository hosts the **interactive, secure, multi-tab portfolio resume** fo
 an IT professional specializing in **network administration**, **AI automation**, and **systems support**.
 
 ## 🌐 Live Preview
-> https://ElSpaniard97.github.io/ezekiel-correa-resume/
-
+> https://elspaniard97.github.io/ezekiel-correa-resume/#summary
 ---
 
 ## 🧠 Key Updates
