@@ -1,4 +1,4 @@
-# Ezekiel Correa — Portfolio Resume (Updated October 2025)
+# Ezekiel Correa — Portfolio Resume (Updated April 2026)
 
 ## 🌟 Overview
 This repository hosts the **interactive, secure, multi-tab portfolio resume** for **Ezekiel Correa**,  
@@ -10,23 +10,35 @@ an IT professional specializing in **network administration**, **AI automation**
 ---
 
 ## 🧠 Key Updates
-### 🔹 New Certification
-- **CompTIA Network+ Certified (October 2025)** — validates advanced skills in routing, switching, and network security.
-
 ### 🔹 Profile Enhancements
-- Expanded summary highlighting **network infrastructure** and **AI-driven automation** expertise.  
-- Modernized layout with improved readability and visual balance.  
-- Updated color accents and section spacing for a clean, professional aesthetic.  
+- Added a **Tech & Skills** tab covering IT operations, automation, AI agent engineering, web, and security skills.
+- Added the **Hermes — Personal AI Ops Platform** as the featured project.
+- Expanded the home summary to reflect practical AI engineering work built on Linux, Python, systemd, GitHub Actions, and LLM APIs.
+
+---
+
+## 💻 Featured Projects
+- **Hermes — Personal AI Ops Platform**: Multi-agent AI system running on a personal Linux workstation, with Discord and Telegram messaging, persistent Obsidian memory, modular skills, scheduled agents, and LLM API integrations.
+- **Security+ Flashcards Dashboard**: Interactive study dashboard with flashcard flipping, review tracking, and chapter-based filtering.
+- **Reports Dashboard**: Centralized reporting dashboard for operational visibility, quick filtering, and export-friendly views.
+
+---
+
+## 🧰 Skills Highlights
+- **Infrastructure**: Ubuntu 24.04, Linux, systemd, Bash, Windows endpoints, TCP/IP, DNS, DHCP, VLANs, routing, and switching.
+- **Automation**: Python, Git and GitHub workflows, GitHub Actions, cron jobs, pre-commit hooks, gitleaks, and secret hygiene.
+- **AI engineering**: Multi-agent design, prompt engineering, tool-use / function-calling, Anthropic, OpenAI, FAL, MCP servers, persistent memory, scheduled agents, and observability.
+- **Web**: Semantic HTML5, responsive CSS, Tailwind CSS, vanilla JavaScript, accessibility basics, GitHub Pages, and Open Graph metadata.
+- **IT operations and security**: Asset lifecycle management, Jira workflows, hardware diagnostics, healthcare endpoint support, documentation, Security+ fundamentals, and least-privilege automation.
 
 ---
 
 ## 💻 Features
-- **Multi-tab navigation** (Home · Experience · AI · Tools · Education · Certifications)  
+- **Multi-tab navigation** (Home · Experience · Education · Tech & Skills · Projects)  
 - **Neon hexagonal photo frame** with pulsing glow  
 - **Responsive design** for desktop and mobile  
 - **Dark / Light mode** with local preference storage  
-- **Animated buttons and social bubbles** for GitHub and LinkedIn  
-- **Brand-colored logos** for tools (Jira, Cisco, Python, etc.)  
+- **Certification PDF previews** for CompTIA credentials  
 - Secure external JavaScript (`script.js`) — no inline scripts, CSP safe  
 
 ---
