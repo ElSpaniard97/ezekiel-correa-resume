@@ -1,7 +1,7 @@
 # Ezekiel Correa — Portfolio Resume (Updated April 2026)
 
 ## 🌟 Overview
-This repository hosts the **interactive, secure, multi-tab portfolio resume** for **Ezekiel Correa**,  
+This repository hosts the **interactive, secure, multi-tab portfolio resume** for **Ezekiel Correa**,
 an IT professional specializing in **network administration**, **AI automation**, and **systems support**.
 
 ## 🌐 Live Preview
@@ -33,20 +33,20 @@ an IT professional specializing in **network administration**, **AI automation**
 ---
 
 ## 💻 Features
-- **Multi-tab navigation** (Home · Experience · Education · Tech & Skills · Projects)  
-- **Neon hexagonal photo frame** with pulsing glow  
-- **Responsive design** for desktop and mobile  
-- **Dark / Light mode** with local preference storage  
-- **Certification PDF previews** for CompTIA credentials  
-- Secure external JavaScript (`script.js`) — no inline scripts, CSP safe  
+- **Multi-tab navigation** (Home · Experience · Education · Tech & Skills · Projects)
+- **Simple rounded portrait frame**
+- **Responsive design** with compact spacing, wrapping navigation, and readable mobile cards
+- **Dark / Light mode** with local preference storage
+- **Certification PDF previews** for CompTIA credentials
+- Secure external JavaScript (`script.js`) — no inline scripts, CSP safe
 
 ---
 
 ## 🔒 Security
-- **Strict Content Security Policy (CSP)** restricting untrusted scripts.  
-- **No inline JavaScript** — all logic moved to external `script.js`.  
-- Uses `textContent` for safe DOM insertion (prevents XSS).  
-- Ready for deployment on **GitHub Pages**, **Netlify**, or **Vercel**.  
+- **Strict Content Security Policy (CSP)** restricting untrusted scripts.
+- **No inline JavaScript** — all logic moved to external `script.js`.
+- Uses `textContent` for safe DOM insertion (prevents XSS).
+- Ready for deployment on **GitHub Pages**, **Netlify**, or **Vercel**.
 
 ---
 
