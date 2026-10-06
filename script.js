@@ -6,12 +6,12 @@
   // --- Tab Navigation ---
   function activateTab(id) {
     tabs.forEach(tab => tab.classList.remove('active'));
-    document.querySelectorAll('[data-tab]').forEach(link => link.classList.remove('active'));
+    document.querySelectorAll('[data-tab]').forEach(link => { link.classList.remove('active'); link.removeAttribute('aria-current'); });
 
     const target = document.getElementById(id);
     if (target) target.classList.add('active');
 
-    document.querySelectorAll(`[data-tab="${id}"]`).forEach(link => link.classList.add('active'));
+    document.querySelectorAll(`[data-tab="${id}"]`).forEach(link => { link.classList.add('active'); link.setAttribute('aria-current', 'page'); });
 
     if (history.replaceState) history.replaceState(null, '', `#${id}`);
   }
@@ -31,6 +31,7 @@
       document.body.classList.toggle('light');
       const isLight = document.body.classList.contains('light');
       modeBtn.textContent = isLight ? '🌞' : '🌙';
+      modeBtn.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
       localStorage.setItem('resume-theme', isLight ? 'light' : 'dark');
     });
 
@@ -38,6 +39,7 @@
     if (localStorage.getItem('resume-theme') === 'light') {
       document.body.classList.add('light');
       modeBtn.textContent = '🌞';
+      modeBtn.setAttribute('aria-label', 'Switch to dark theme');
     }
   }
 
