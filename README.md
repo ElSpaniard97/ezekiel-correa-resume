@@ -21,3 +21,4 @@ Open http://localhost:9012. No build or dependencies are required.
 - `assets/certifications/`: existing CompTIA certificates.
 
 Navigation and resume links work without JavaScript. Resume contact details are public when deployed to GitHub Pages. The full PDF is held locally pending explicit publication approval; View Resume opens the experience section.
+https://elspaniard97.github.io/ezekiel-correa-resume/#home
