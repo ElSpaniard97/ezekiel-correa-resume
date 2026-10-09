@@ -19,6 +19,7 @@ Open http://localhost:9012. No build or dependencies are required.
 - `script.js`: active navigation and compatibility with previous section hashes.
 - `assets/austin-office-hero.jpg`: clean background derived from the supplied visual reference.
 - `assets/certifications/`: existing CompTIA certificates.
+- `assets/projects/`: screenshots shown on each project card.
 
 Navigation and resume links work without JavaScript. Resume contact details are public when deployed to GitHub Pages. The full PDF is held locally pending explicit publication approval; View Resume opens the experience section.
 https://elspaniard97.github.io/ezekiel-correa-resume/#home
